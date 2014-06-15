@@ -1,8 +1,8 @@
 #Beschreibung, wie die Datensätze auf data.opendataportal.at nach test.data.opendataportal.at migriert werden können
 
 ##Die datenbankseitige Ersteinrichtung
-Auf der Eingabeaufforderung zum Benutzer Postgres wechseln und neue Datenbank
-für ckan und den datapusher anlegen:
+Auf der Eingabeaufforderung zum Benutzer Postgres wechseln und neue Datenbanken
+für ckan und das CKAN-datapusher Service anlegen:
 
     sudo -u postgres -i
     createdb -O ckan_default ckan_test -E utf8
@@ -35,10 +35,10 @@ kopieren:
     cp -r /var/lib/ckan/default /var/lib/ckan/test
 
 Die Datenbanken des Produktivsystems mit der Option exportieren, alle Daten vor
-einem erneuten restore in jene Datenbank, in der der restore durchgeführt wird,
+einem erneuten restore in jener Datenbank, in der der restore durchgeführt wird,
 zu löschen. Dazu zuerst zum Datenbank-Superuser wechseln:
 
-    sudo -u postgresql -i
+    sudo -u postgres -i
     pg_dump ckan_default --clean > ckan_test.pgdump
     pg_dump datastore_default --clean > datastore_test.pgdump
 
