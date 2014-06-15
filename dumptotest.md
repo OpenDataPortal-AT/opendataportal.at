@@ -1,6 +1,6 @@
 #Beschreibung, wie die Datensätze auf data.opendataportal.at nach test.data.opendataportal.at migriert werden können
 
-##Die datenbankmäßige erste Einrichtung
+##Die datenbankseitige Ersteinrichtung
 Auf der Eingabeaufforderung zum Benutzer Postgres wechseln und neue Datenbank
 für ckan und den datapusher anlegen:
 
