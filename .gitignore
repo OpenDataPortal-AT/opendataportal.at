@@ -1,6 +1,5 @@
 .idea
 .DS_Store
-index.php
 debug.log
 advanced-cache.php
 cache/
