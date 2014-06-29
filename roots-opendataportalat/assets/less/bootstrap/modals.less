@@ -22,12 +22,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: @zindex-modal;
-  -webkit-overflow-scrolling: touch;
-
-  // Prevent Chrome on Windows from adding a focus outline. For details, see
-  // https://github.com/twbs/bootstrap/pull/10951.
-  outline: 0;
+  z-index: @zindex-modal-background;
 
   // When fading in the modal, animate it to slide down
   &.fade .modal-dialog {
@@ -40,8 +35,11 @@
 // Shell div to position the modal with bottom padding
 .modal-dialog {
   position: relative;
+  margin-left: auto;
+  margin-right: auto;
   width: auto;
-  margin: 10px;
+  padding: 10px;
+  z-index: (@zindex-modal-background + 10);
 }
 
 // Actual modal
@@ -68,7 +66,6 @@
   background-color: @modal-backdrop-bg;
   // Fade for backdrop
   &.fade { .opacity(0); }
-  &.in { .opacity(@modal-backdrop-opacity); }
 }
 
 // Modal header
@@ -102,7 +99,7 @@
   padding: (@modal-inner-padding - 1) @modal-inner-padding @modal-inner-padding;
   text-align: right; // right align buttons
   border-top: 1px solid @modal-footer-border-color;
-  &:extend(.clearfix all); // clear it in case folks use .pull-* classes on buttons
+  .clearfix(); // clear it in case folks use .pull-* classes on buttons
 
   // Properly space out buttons
   .btn + .btn {
@@ -120,20 +117,15 @@
 }
 
 // Scale up the modal
-@media (min-width: @screen-sm-min) {
-  // Automatically set modal's width for larger viewports
+@media screen and (min-width: @screen-sm-min) {
+
   .modal-dialog {
-    width: @modal-md;
-    margin: 30px auto;
+    width: 600px;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
   .modal-content {
     .box-shadow(0 5px 15px rgba(0,0,0,.5));
   }
 
-  // Modal sizes
-  .modal-sm { width: @modal-sm; }
-}
-
-@media (min-width: @screen-md-min) {
-  .modal-lg { width: @modal-lg; }
 }
