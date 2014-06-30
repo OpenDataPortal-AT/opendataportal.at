@@ -66,7 +66,7 @@ Template for Landing Page.
 
 <div class="wrapper-home-themen container-fluid row">
 	<div class="home-themen container text-center">
-		<h3><a href="<?php echo home_url() ?>/themenuebersicht" title="Themen">Themen</a></h2>
+		<h3><a href="<?php echo home_url() ?>/themen" title="Themen">Themen</a></h2>
 
 		<a href="<?php echo home_url() ?>/arbeit" title="Arbeit">
 			<div class="logo-thema logo-arbeit">

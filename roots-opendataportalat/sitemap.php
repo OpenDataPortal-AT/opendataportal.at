@@ -26,6 +26,6 @@ Template Name: Sitemap
                 </div>
     <div style="clear:both;"></div>
     <p>
-        Click <a href="/detailed-sitemap/" title="Detailed Sitemap">here</a> for a Detailed Sitemap
+        Hier klicken für eine <a href="<?php echo home_url(); ?>/sitemap.xml" title="XML Sitemap">XML Sitemap</a>.
     </p>
 </div>
