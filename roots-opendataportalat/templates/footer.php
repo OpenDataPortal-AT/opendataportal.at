@@ -72,8 +72,6 @@ Footer
 
 </footer>
 
-<?php wp_footer(); ?>
-
 <!-- Piwik -->
 <script type="text/javascript">
   var _paq = _paq || [];
@@ -87,5 +85,11 @@ Footer
     g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
   })();
 </script>
+<noscript><p><img src="http://piwik.stefankasberger.at/piwik.php?idsite=23" style="border:0;" alt="" /></p></noscript>
 <!-- End Piwik Code -->
+
+<?php wp_footer(); ?>
+
+
+
 
