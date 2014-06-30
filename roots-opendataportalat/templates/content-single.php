@@ -36,7 +36,7 @@ Default template for single view a post.
 			<div class="entry-content col-md-9">
 				<?php 
 
-						the_content();
+						the_content(); ?>
 			<div  class="row">
 					<?php get_template_part('templates/content', 'socialshare'); ?>
 				</div>

@@ -613,7 +613,7 @@ function get_betriebssysteme_sidebar($taxonomy) {
 
 	} else {
 		foreach ($os_list as $os) {
-			echo '<span class="icon-betriebssystem icon-' . $os->slug . '">' . esc_attr($os->name) . '</span>';
+			echo '<li class="icon-betriebssystem icon-' . $os->slug . '">' . esc_attr($os->name) . '</li>';
 		}
 	}
 }

@@ -7,7 +7,7 @@ Single page fo anwendungen
 <div class="container">
 	<article <?php post_class(); ?>>
 	
-		<header class="col-md-offset-4">
+		<header class="col-md-offset-3">
 			<h1 class="entry-title"><?php the_title(); ?></h1>
 		</header>
 		
@@ -70,8 +70,6 @@ Single page fo anwendungen
 				<div  class="row col-md-12">
 					<?php get_template_part('templates/content', 'socialshare'); ?>
 				</div>
-
-				<!-- <?php comments_template('/templates/comments.php'); ?> -->
 
 			</div>
 		</div>

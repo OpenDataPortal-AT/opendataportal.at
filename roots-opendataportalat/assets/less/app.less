@@ -2266,33 +2266,30 @@ main.main {
 			}
 
 			.icon-firefoxos {
-				background: transparent url(../img/firefoxos.png) no-repeat;
+				background: transparent url(../img/firefox-os.png) no-repeat;
 			}
 
 			.icon-firefoxos:hover {
-				background: transparent url(../img/firefoxos_hover.png) no-repeat;
+				background: transparent url(../img/firefox-os_hover.png) no-repeat;
 			}
 
 			.icon-windows8 {
-				background: transparent url(../img/windows8.png) no-repeat;
+				background: transparent url(../img/windows-8.png) no-repeat;
 			}
 
 			.icon-windows8:hover {
-				background: transparent url(../img/windows8_hover.png) no-repeat;
+				background: transparent url(../img/windows-8_hover.png) no-repeat;
 			}
 
 			.icon-windowsphone {
-				background: transparent url(../img/windowsphone.png) no-repeat;
+				background: transparent url(../img/windows-phone.png) no-repeat;
 			}
 
 			.icon-windowsphone:hover {
-				background: transparent url(../img/windowsphone_hover.png) no-repeat;
+				background: transparent url(../img/windows-phone_hover.png) no-repeat;
 			}
-
-
 		}
 	}
-
 }
 
 
@@ -3010,28 +3007,28 @@ main.main {
 	background: transparent url(../img/browser-www_hover.png) no-repeat;
 }
 
-.icon-firefoxos {
-	background: transparent url(../img/firefoxos.png) no-repeat;
+.icon-firefox-os {
+	background: transparent url(../img/firefox-os.png) no-repeat;
 }
 
-.icon-firefoxos:hover {
-	background: transparent url(../img/firefoxos_hover.png) no-repeat;
+.icon-firefox-os:hover {
+	background: transparent url(../img/firefox-os_hover.png) no-repeat;
 }
 
-.icon-windows8 {
-	background: transparent url(../img/windows8.png) no-repeat;
+.icon-windows-8 {
+	background: transparent url(../img/windows-8.png) no-repeat;
 }
 
-.icon-windows8:hover {
-	background: transparent url(../img/windows8_hover.png) no-repeat;
+.icon-windows-8:hover {
+	background: transparent url(../img/windows-8_hover.png) no-repeat;
 }
 
-.icon-windowsphone {
-	background: transparent url(../img/windowsphone.png) no-repeat;
+.icon-windows-phone {
+	background: transparent url(../img/windows-phone.png) no-repeat;
 }
 
-.icon-windowsphone:hover {
-	background: transparent url(../img/windowsphone_hover.png) no-repeat;
+.icon-windows-phone:hover {
+	background: transparent url(../img/windows-phone_hover.png) no-repeat;
 }
 
 
@@ -3046,7 +3043,7 @@ main.main {
 
 		h2 {
 			padding-bottom: 10px;
-			margin-bottom: 5px;
+			margin-bottom: 10px;
 			border-bottom: 1px solid @gray-lightish;
 			position: relative;
 		}
@@ -3086,25 +3083,60 @@ main.main {
 			h2 {
 				margin-top: 0px;
 			}
+			.icon-thema img {
+				margin-right: 3px;
+			}
 		}
 		.sidebar-anwendung-betriebssysteme {
 
 			.icon-betriebssystem {
 				width: 16px;
 				height: 16px; 
-				margin: 0px 2px;
+				margin: 3px 0px;
 				padding-left: 20px;
 				display: block;
 			}
-
 		}
 	}
 }
 
 
 /* ==========================================================================
+	 TABLE CKAN DATA
+	 ========================================================================== */
+
+table#table-data {
+
+	tr {
+		th {
+			background-color: @brand-blue;
+			font-family: open-sans-bold;
+			padding-left: 20px;
+			color: white;
+			border-top-left-radius: 6px;
+			border-top-right-radius: 6px;
+
+			.last {
+				border-bottom-left-radius: 6px;
+				border-bottom-right-radius: 6px;
+			}
+		}
+		td {
+			padding-left: 20px;
+			
+			a {
+				color: @brand-blue;
+			}
+		}
+	}
+}
+
+
+
+/* ==========================================================================
 	 DATENTOOL SINGLE
 	 ========================================================================== */
+
 
 .single-cpt_datentools {
 
