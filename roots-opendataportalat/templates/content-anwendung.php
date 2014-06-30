@@ -55,7 +55,7 @@ Single page fo anwendungen
 				if($data) { ?>
 				<div>
 					
-					<h1>Diese Anwendung verwendet folgende Datensätze/Dienste:</h1>
+					<h3>Diese Anwendung verwendet folgende Datensätze/Dienste:</h3>
 					
 					<table id="table-data" class="table-related-datasets table table-striped" onload="start();" data-ids="<?php echo $data; ?>">
 						<tr>

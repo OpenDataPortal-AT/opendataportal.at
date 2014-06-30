@@ -7,7 +7,7 @@ Single page of datentools
 <div class="container">
 	<article <?php post_class(); ?>>
 	
-		<header class="col-md-offset-4">
+		<header class="col-md-offset-3">
 			<h1 class="entry-title"><?php the_title(); ?></h1>
 		</header>
 		
@@ -55,7 +55,7 @@ Single page of datentools
 				if($data) { ?>
 				<div>
 					
-					<h1>Diese Anwendung verwendet folgende Datensätze/Dienste:</h1>
+					<h3>Diese Anwendung verwendet folgende Datensätze/Dienste:</h3>
 					
 					<table id="table-data" class="table-related-datasets table table-striped" onload="start();" data-ids="<?php echo $data; ?>">
 						<tr>
@@ -70,7 +70,6 @@ Single page of datentools
 				<div  class="row col-md-12">
 					<?php get_template_part('templates/content', 'socialshare'); ?>
 				</div>
-				<!-- <?php comments_template('/templates/comments.php'); ?> -->
 			</div>
 		</div>
 		
