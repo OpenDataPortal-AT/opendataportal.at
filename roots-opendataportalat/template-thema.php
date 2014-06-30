@@ -40,18 +40,6 @@ Template for Thema page
 	</div>
 </div>
 
-<div class="wrapper-thema-data container-fluid row">
-	<div class="thema-data container">
-		<h3>Datensätze zu diesem Thema</h3>
-		<?php if(XXXXX >= 1) { ?>
-			<table id="thema-table" class="table-thema table table-striped" data-thema="<?php echo $thema; ?>" onload="start();">
-			</table>
-		} else { ?>
-			<div class="no-entries">Derzeit sind keine Einträge vorhanden</div>
-		<?php } ?>
-	</div>	
-</div>	
-
 <div class="wrapper-thema-news container-fluid row"> 
 	<div class="thema-news container"> 	
 		<h3>News zu diesem Thema</h3>	
