@@ -46,7 +46,7 @@ Footer
 			<div class="footer-rss-feeds col-md-3">
 				<h2>RSS Feeds</h2>
 				<ul>
-					<li><a href="http://data.dataportal.at/feeds/dataset.atom" title="RSS Feed Updates Datenkatalog">Updates Datenkatalog</a></li>
+					<li><a href="http://data.opendataportal.at/feeds/dataset.atom" title="RSS Feed Updates Datenkatalog">Updates Datenkatalog</a></li>
 					<li><a href="<?php echo home_url(); ?>/feed/?post_type=anwendungen" title="RSS Feed Anwendungen">Anwendungen</a></li>
 					<li><a href="<?php bloginfo('rss2_url'); ?>" title="RSS Feed News">News</a></li>
 				</ul>

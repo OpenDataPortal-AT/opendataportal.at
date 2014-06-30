@@ -659,7 +659,7 @@ function get_name_submitter($taxonomy) {
 	if($website) {
 		echo '<a class="name-submitter" href="' . $website . '" title="Website ' . $name . '">' . $name . '</a><br>';
 	} else {
-		echo 'span>' . $name . '</span>';
+		echo '<span>' . $name . '</span>';
 	}	
 }
 
@@ -715,6 +715,7 @@ function wpcf7_create_anwendung(&$wpcf7_data) {
 		add_post_meta($pid, 'app_name', $wpcf7_data->posted_data['app_name']);
 		add_post_meta($pid, 'app_beschreibung', $wpcf7_data->posted_data['app_beschreibung']);
 		add_post_meta($pid, 'app_verwendete_datensaetze', $wpcf7_data->posted_data['app_verwendete_datensaetze']); 
+		add_post_meta($pid, 'app_bild_url', $wpcf7_data->posted_data['app_bild_url']); 
 		add_post_meta($pid, 'app_website_1', $wpcf7_data->posted_data['app_website_1']); 
 		add_post_meta($pid, 'app_text_website_1', $wpcf7_data->posted_data['app_text_website_1']); 
 		add_post_meta($pid, 'app_website_2', $wpcf7_data->posted_data['app_website_2']); 
@@ -775,7 +776,6 @@ function wpcf7_create_anwendung(&$wpcf7_data) {
 
 	// post the post
 	do_action('wp_insert_post', 'wp_insert_post');
-
 }
 
 
@@ -807,8 +807,12 @@ function wpcf7_create_datentool(&$wpcf7_data) {
 		$list_themen = $wpcf7_data->posted_data['tool_themen'];
 		wp_set_post_terms( $pid, $list_themen, 'themen' );
 
+		// save taxonomy funktionen
+		$list_themen = $wpcf7_data->posted_data['tool_funktionen'];
+		wp_set_post_terms( $pid, $list_themen, 'tools_funktionen' );
+
 		// save betriebssysteme 
-		$list_os = $wpcf7_data->posted_data['app_betriebssysteme'];
+		$list_os = $wpcf7_data->posted_data['tool_betriebssysteme'];
 		wp_set_post_terms( $pid, $list_os, 'tools_betriebssysteme' );
 
 		// save art 
