@@ -703,11 +703,11 @@ function wpcf7_create_anwendung(&$wpcf7_data) {
 		$list_themen = $wpcf7_data->posted_data['app_themen'];
 		wp_set_post_terms( $pid, $list_themen, 'themen' );
 
-		// save betriebssysteme 
+		// save taxonomy betriebssysteme 
 		$list_os = $wpcf7_data->posted_data['app_betriebssysteme'];
 		wp_set_post_terms( $pid, $list_os, 'app_betriebssysteme' );
 
-		// save art 
+		// save taxonomy typ 
 		$list_art = $wpcf7_data->posted_data['app_typ'];
 		wp_set_post_terms( $pid, $list_art, 'app_typ' );
 
@@ -808,23 +808,23 @@ function wpcf7_create_datentool(&$wpcf7_data) {
 		wp_set_post_terms( $pid, $list_themen, 'themen' );
 
 		// save taxonomy funktionen
-		$list_themen = $wpcf7_data->posted_data['tool_funktionen'];
-		wp_set_post_terms( $pid, $list_themen, 'tools_funktionen' );
+		$list_funktionen = $wpcf7_data->posted_data['tool_funktionen'];
+		wp_set_post_terms( $pid, $list_funktionen, 'tools_funktionen' );
 
-		// save betriebssysteme 
+		// save taxonomy betriebssysteme 
 		$list_os = $wpcf7_data->posted_data['tool_betriebssysteme'];
 		wp_set_post_terms( $pid, $list_os, 'tools_betriebssysteme' );
 
-		// save art 
-		$list_art = $wpcf7_data->posted_data['tool_typ'];
-		wp_set_post_terms( $pid, $list_art, 'tools_typ' );
+		// save taxonomy typ 
+		$list_typ = $wpcf7_data->posted_data['tool_typ'];
+		wp_set_post_terms( $pid, $list_typ, 'tools_typ' );
 
 		// add custon fields from form
 		add_post_meta($pid, 'tool_name', $wpcf7_data->posted_data['tool_name']);
 		add_post_meta($pid, 'tool_beschreibung', $wpcf7_data->posted_data['tool_beschreibung']);
-		add_post_meta($pid, 'tool_verwendete_datensaetze', $wpcf7_data->posted_data['tool_verwendete_datensaetze']); 
-		add_post_meta($pid, 'tool_website_1', $wpcf7_data->posted_data['tool_website']); 
-		add_post_meta($pid, 'tool_text_website_1', $wpcf7_data->posted_data['tool_text_website']); 
+		add_post_meta($pid, 'tool_bild_url', $wpcf7_data->posted_data['tool_bild_url']);
+		add_post_meta($pid, 'tool_website', $wpcf7_data->posted_data['tool_website']); 
+		add_post_meta($pid, 'tool_text_website', $wpcf7_data->posted_data['tool_text_website']); 
 		add_post_meta($pid, 'tool_name_einreicherin', $wpcf7_data->posted_data['tool_name_einreicherin']); 
 		add_post_meta($pid, 'tool_email_einreicherin', $wpcf7_data->posted_data['tool_email_einreicherin']); 
 		add_post_meta($pid, 'tool_website_einreicherin', $wpcf7_data->posted_data['tool_website_einreicherin']); 
@@ -835,7 +835,6 @@ function wpcf7_create_datentool(&$wpcf7_data) {
 
 		// add submission date
 		add_post_meta($pid, 'tool_einreichdatum', date('d.m.Y'));  // date format must be dd.mm.yy
-
 		// add image to post
 		/*
 
@@ -873,13 +872,12 @@ function wpcf7_create_datentool(&$wpcf7_data) {
 		*/
 
 		// redirect after all worked properly
-		wp_redirect( get_template_directory_uri() . '/template-formular-eingereicht.php?tool_name=' . $wpcf7_data->posted_data['tool_name'] . '&wordpress_id=' . $pid );
+		//wp_redirect( get_template_directory_uri() . '/template-formular-eingereicht.php?tool_name=' . $wpcf7_data->posted_data['tool_name'] . '&wordpress_id=' . $pid );
 
 	} // end of if statement 
 
 	// post the post
 	do_action('wp_insert_post', 'wp_insert_post');
-
 }
 
 

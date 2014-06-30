@@ -20,27 +20,35 @@ Template for Thema page
 	</div>	
 </div>
 
+
+
 <div class="wrapper-thema-highlight container-fluid row">
 	<div class="thema-highlight container">
-
 		<h3 class="text-center"><a href="<?php echo home_url() ?>/highlights/?taxonomy&themen=<?php echo $thema; ?>" title="Highlight">Highlights</a></h3>
-
 		<?php $myQuery_Highlight = new WP_Query( array( 'post_type' => 'cpt_highlights', 'tax_query' =>  array( array( 'taxonomy' => 'themen', 'field' => 'slug', 'terms' => $thema ) ), 'posts_per_page' => 1, 'orderby' => 'date', 'order' => 'DESC') );
-		while ( $myQuery_Highlight->have_posts() ) : $myQuery_Highlight->the_post(); { ?>
+		
+		if($myQuery_Highlight->found_posts >= 1) {
+			while ( $myQuery_Highlight->have_posts() ) : $myQuery_Highlight->the_post(); { ?>
 
-			<?php get_template_part('templates/content', 'highlight-preview'); ?>
+				<?php get_template_part('templates/content', 'highlight-preview'); ?>
 
-		<?php } endwhile; // end of the loop. 
-		wp_reset_postdata(); ?>
-
+			<?php } endwhile; // end of the loop. 
+			wp_reset_postdata();
+		} else { ?>
+			<div class="no-entries">Derzeit sind keine Einträge vorhanden</div>
+		<?php } ?>
 	</div>
 </div>
 
 <div class="wrapper-thema-data container-fluid row">
 	<div class="thema-data container">
 		<h3>Datensätze zu diesem Thema</h3>
-		<table id="thema-table" class="table-thema table table-striped" data-thema="<?php echo $thema; ?>" onload="start();">
-		</table>
+		<?php if(XXXXX >= 1) { ?>
+			<table id="thema-table" class="table-thema table table-striped" data-thema="<?php echo $thema; ?>" onload="start();">
+			</table>
+		} else { ?>
+			<div class="no-entries">Derzeit sind keine Einträge vorhanden</div>
+		<?php } ?>
 	</div>	
 </div>	
 
@@ -48,13 +56,17 @@ Template for Thema page
 	<div class="thema-news container"> 	
 		<h3>News zu diesem Thema</h3>	
 		<?php $myQuery_News = new WP_Query( array( 'post_type' => 'post', 'tax_query' =>  array( array( 'taxonomy' => 'themen', 'field' => 'slug', 'terms' => $thema ) ), 'posts_per_page' => 3, 'orderby' => 'date', 'order' => 'DESC') );
-		while ( $myQuery_News->have_posts() ) : $myQuery_News->the_post(); { ?>
-			<div class="thema-preview-news col-md-12" id="post-<?php echo $post->ID; ?>">
-				<?php get_template_part('templates/content', 'news'); ?>
-			</div>	
-		<?php } endwhile; // end of the loop. 
-		wp_reset_postdata(); ?>
-		 <a href="<?php echo home_url() ?>/news/?taxonomy&themen=<?php echo $thema; ?>" title="News"><button class="btn btn-primary">mehr anzeigen</button></a>
+		if($myQuery_News->found_posts >= 1) {
+			while ( $myQuery_News->have_posts() ) : $myQuery_News->the_post(); { ?>
+				<div class="thema-preview-news col-md-12" id="post-<?php echo $post->ID; ?>">
+					<?php get_template_part('templates/content', 'news'); ?>
+				</div>	
+			<?php } endwhile; // end of the loop. 
+			wp_reset_postdata(); ?>
+			 <a href="<?php echo home_url() ?>/news/?taxonomy&themen=<?php echo $thema; ?>" title="News"><button class="btn btn-primary">mehr anzeigen</button></a>
+		<?php } else { ?>
+			<div class="no-entries">Derzeit sind keine Einträge vorhanden</div>
+		<?php } ?>
 	</div>	
 </div>
 
@@ -63,14 +75,17 @@ Template for Thema page
 		
 		<h3>Anwendungen zu diesem Thema</h3>
 		<?php $myQuery_Anwendungen = new WP_Query( array( 'post_type' => 'cpt_anwendungen', 'tax_query' =>  array( array( 'taxonomy' => 'themen', 'field' => 'slug', 'terms' => $thema ) ), 'posts_per_page' => 3, 'orderby' => 'date', 'order' => 'DESC') );
-		while ( $myQuery_Anwendungen->have_posts() ) : $myQuery_Anwendungen->the_post(); { ?>	
-			<div class="anwendung-preview col-md-12 row" id="post-<?php echo $post->ID; ?>">
-				<?php get_template_part('templates/content', 'anwendung-preview'); ?>
-			</div>		
-		<?php } endwhile; // end of the loop. 
-		wp_reset_postdata(); ?>
-		<a href="<?php echo home_url() ?>/anwendungen/?taxonomy&themen=<?php echo $thema; ?>" title="Anwendungen"><button class="btn btn-primary">mehr anzeigen</button></a>
-
+		if($myQuery_Anwendungen->found_posts >= 1) {
+			while ( $myQuery_Anwendungen->have_posts() ) : $myQuery_Anwendungen->the_post(); { ?>	
+				<div class="anwendung-preview col-md-12 row" id="post-<?php echo $post->ID; ?>">
+					<?php get_template_part('templates/content', 'anwendung-preview'); ?>
+				</div>		
+			<?php } endwhile; // end of the loop. 
+			wp_reset_postdata(); ?>
+			<a href="<?php echo home_url() ?>/anwendungen/?taxonomy&themen=<?php echo $thema; ?>" title="Anwendungen"><button class="btn btn-primary">mehr anzeigen</button></a>
+		<?php } else { ?>
+			<div class="no-entries">Derzeit sind keine Einträge vorhanden</div>
+		<?php } ?>
 	</div>	
 </div>	
 
