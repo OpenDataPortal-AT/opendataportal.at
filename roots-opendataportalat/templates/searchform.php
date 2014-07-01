@@ -24,7 +24,6 @@
   </div>
 </form>
 
-
 <script>
 
 //var searchform = document.getElementById('header-suche');
