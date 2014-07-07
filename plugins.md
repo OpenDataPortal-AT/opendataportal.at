@@ -1,10 +1,25 @@
 ## Community plugins
 
-* advanced-custom-fields       x.x.x    http://www.advancedcustomfields.com/
-* akismet                      x.x.x    http://akismet.com/
-* broken-link-checker          1.9.3    http://w-shadow.com/blog/2007/08/05/broken-link-checker-for-wordpress/
-* custom-post-type-ui          0.8.2    http://webdevstudios.com/plugin/custom-post-type-ui/
-* w3-total-cache               0.9.4    http://www.w3-edge.com/wordpress-plugins/w3-total-cache/
-* wordpress-importer           0.6.1    http://wordpress.org/extend/plugins/wordpress-importer/
-
+- add-image-src-meta-tag 			http://frankprendergast.ie/resources/add-image-src-wordpress-plugin/
+- advanced-custom-fields 			http://www.advancedcustomfields.com/
+- advanced-custom-fields-contact-form-7-field 	https://github.com/taylormsj/acf-cf7-field
+- all-in-one-seo-pack 				http://wordpress.org/plugins/all-in-one-seo-pack/
+- antispam-bee 					http://antispambee.de/
+- breadcrumb-navxt				http://mtekk.us/code/breadcrumb-navxt/
+- broken-link-checker 				http://w-shadow.com/blog/2007/08/05/broken-link-checker-for-wordpress/
+- contact-form-7 				http://contactform7.com/
+- custom-post-type-ui				http://webdevstudios.com/plugin/custom-post-type-ui/
+- feedwordpress 				http://feedwordpress.radgeek.com/
+- open-external-links-in-a-new-window 		http://wordpress.org/plugins/open-external-links-in-a-new-window/
+- really-simple-captcha 			http://contactform7.com/captcha/
+- spam-free-wordpress 				https://www.toddlahman.com/shop/simple-comments/
+- tinymce-advanced 				http://www.laptoptips.ca/projects/tinymce-advanced/
+- twitter-widget-pro 				http://aarondcampbell.com/wordpress-plugin/twitter-widget-pro/
+- ultimate-wp-query-search-filter 		http://9-sec.com/
+- uniform-js 					http://wordpress.org/plugins/uniform-js/
+- wordpress-importer 				http://wordpress.org/plugins/wordpress-importer/
+- wp-mailto-links 				http://wordpress.org/plugins/wp-mailto-links/
+- wp-piwik 					http://wordpress.org/plugins/wp-piwik/
+- wp-security-scan 				https://wordpress.org/plugins/wp-security-scan/
+- wp-social-share-privacy-plugin 		http://wordpress.org/plugins/wp-social-share-privacy-plugin/
 

@@ -20,20 +20,21 @@ Search page
 			<?php while (have_posts()) : the_post(); ?>		
 				       
 				<div class="search-results-content" >
-					<div class="header">
 						<div class="preview-date">
 							<?php get_template_part('templates/content', 'date-field'); ?>
 						</div>
-
+					<div class="col-md-11">
 						<h4 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-					</div>
-
-					<div class="entry-summary">
+						
+						<div class="entry-summary">
 						<div class="entry-content preview-excerpt">
 							<?php the_excerpt(); ?>
 							<strong><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">weiterlesen</a></strong>
 						</div>
 					</div>
+					</div>
+
+					
 				</div>
 
 			<?php endwhile; ?>

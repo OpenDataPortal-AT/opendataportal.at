@@ -156,6 +156,7 @@ h4, h5, h6{
 	font-family: open-sans-bold;
 	margin-left: 4px;
 	margin-top: 16px;
+	color:@brand-blue;
 
 	.tagline-data {
 		color: @brand-green;
@@ -824,6 +825,7 @@ article.hentry,
 }
 
 .wrapper-footer-logos {
+	border-top:1px solid @gray-lightish;
 	background-color: white;
 	padding-top: 10px;
 	padding-bottom: 30px;
@@ -1016,6 +1018,7 @@ article.hentry,
 
 .alignleft {
 	float: left;
+	margin:0 10px 5px 0
 }
 
 .alignright {
@@ -1493,6 +1496,8 @@ main.main {
 /* Jumbotron */
 
 .jumbotron {
+	p{
+	font-size: @font-size-base}
 	
 	h2 {
 		font-size: @font-size-large;
@@ -1524,7 +1529,7 @@ main.main {
 	.frontpage-search {
 
 		padding: 10px 0 40px;
-		max-width: 600px;
+		max-width: 450px;
 		min-width: 350px;
 		margin: 0 auto;
 
@@ -1578,9 +1583,15 @@ main.main {
 			font-weight: 400;
 			font-style: italic;
 			font-size: 15px;
+			color:#BABABA;
 			box-shadow: 0 2px 4px rgba(0,0,0,0.4) inset;
 		}
-
+		
+		input.search-field.form-control:focus{
+			border-color:#ccc;
+			color:#666666
+		}
+		
 		#search-prompt {
 			display: inline-block;
 			height: 40px;
@@ -1838,6 +1849,12 @@ main.main {
 	}
 }
 
+.wrapper-home-themen .logo-thema{
+ 	h4{
+ 		color: white;
+ 		text-shadow: 0.05em 0.05em @gray-dark}
+ }
+
 .logo-thema:hover {
 	background-color: #E0E0E0;
 }
@@ -1906,7 +1923,6 @@ main.main {
 	background-image: url(../img/pattern_beige.png);
 	background-color: @gray-lighter;
 	padding-top: 20px;
-	border-bottom:1px solid @gray-lightish;
 
 	.home-news {
 		padding-bottom: 40px;
@@ -2000,14 +2016,18 @@ main.main {
 		font-style: italic;
 		font-size: @font-size-small;
 	}
-	.highlight-thumb {
+	.highlight-thumb, .no-thumb {
 		padding: 0px 20px 20px 50px;
+		text-align:right;
 	}
 	.no-thumb {
-		background-color: gray;
 		width: 250px;
 		height: 150px;
 	}
+	
+	.highlight-thumb img{
+		border:1px solid @gray-lightish}
+		
 	.preview-content {
 
 		a h4 {
@@ -2290,8 +2310,8 @@ main.main {
 	 ========================================================================== */
 
 
-.sidebar-single-news {
-
+.hentry .sidebar-single-news {
+	font-size: @font-size-small;
 	padding-right: 20px;
 
 	h2 {
@@ -2335,14 +2355,15 @@ main.main {
 		}
 		.btn-tags {
 			background-color: @brand-green;
-			font-family: open-sans-bold;
+			font-family: open-sans-semibold;
 			font-size: 11px;
 			color: white;
 			border-radius: 15px;
-			margin: 2px 1px;
+			margin: 2px 5px 2px 0;
 			padding: 2px 10px;
 		}
-		.btn-tags:hoover {
+		.btn-tags:hover {
+			background: @brand-green-dark;
 		}
 		.btn-tags:focus {
 		}
@@ -2494,6 +2515,8 @@ main.main {
 	}
 }
 
+
+
 .wrapper-thema-anwendungen {
 
 	margin-bottom: 10px;
@@ -2554,86 +2577,13 @@ main.main {
 		margin: 20px 30px 40px;
 		display:inline-block;
 	}
+	
+	.logo-thema h4{
+	color:@brand-green;
+	text-shadow: 0.05em 0.05em white;}
 }
 
-.logo-thema {
-	background-image: url(../img/icons.png);
-	background-color: #fff;
-	background-repeat: no-repeat;
-	width: 70px;
-	height: 70px;
-	border: none; 
-	float: left;
-	border-radius:35px;
 
-	h4 {
-		color: @brand-green-dark;
-		padding-top: 80px;
-		font-size: 13px;
-		font-family: open-sans-bold;
-		margin: 0 -30px;
-	}
-}
-
-.logo-thema:hover {
-	background-color: #E0E0E0;
-}
-
-.logo-arbeit {
-	background-position: 0 center;
-}
-
-.logo-bevoelkerung {
-	background-position: -70px center;
-}
-
-.logo-bildung-und-forschung {
-	background-position: -140px center;
-}
-
-.logo-finanzen-und-rechnungswesen {
-	background-position: -210px center;
-}
-
-.logo-geographie-und-planung {
-	background-position: -280px center;
-}
-
-.logo-gesellschaft-und-soziales {
-	background-position: -350px center;
-}
-
-.logo-gesundheit {
-	background-position: -420px center;
-}
-
-.logo-kunst-und-kultur {
-	background-position: -490px center;
-}
-
-.logo-land-und-forstwirtschaft {
-	background-position: -560px center;
-}
-
-.logo-sport-und-freizeit {
-	background-position: -630px center;
-}
-
-.logo-umwelt {
-	background-position: -700px center;
-}
-
-.logo-verkehr-und-technik {
-	background-position: -770px center;
-}
-
-.logo-verwaltung-und-politik {
-	background-position: -840px center;
-}
-
-.logo-wirtschaft-und-tourismus {
-	background-position: -910px center;
-}
 
 
 
@@ -2778,8 +2728,8 @@ main.main {
 }
 
 .filter-sidebar {
-	padding-top: 76px;
-	padding-bottom:60px;
+  padding-top: 0px;
+  padding-bottom: 60px;
 }
 
 .filter-sidebar .text-search .uwpqsf_class input#uwpqsf_id_key.uwpqsftext {
@@ -2962,6 +2912,53 @@ main.main {
   font-size: 11px;
 }
 
+.news-list .page-header-title {
+  margin-top:-25px;
+}
+
+.datentools-content h2 {
+	margin-top: -4px;
+}
+
+.anwendungen-content h2 {
+  margin-top:-3px;
+}
+
+/* ==========================================================================
+	 SEARCH RESULTS
+	 ========================================================================== */
+.search-results{
+	.search-results-content{
+	float:left;
+	width:100%;
+	clear:both;}
+
+	.preview-date {
+			padding-right: 10px;
+			padding-bottom: 10px;
+			float:left;
+
+			.date-field {
+
+				float: left;
+				.date-day {
+					border: none;
+				}
+
+				.date-month {
+					font-family: open-sans-bold;
+				}
+			}
+		}
+	h4.entry-title{
+		font-family: open-sans-bold;
+    font-size: 16px;
+    margin-bottom: 5px;
+    margin-top: 0;
+		}
+		
+	
+}
 
 /* ==========================================================================
 	 ANWENDUNG SINGLE
@@ -2995,7 +2992,7 @@ main.main {
 	background: transparent url(../img/browser-www.png) no-repeat;
 }
 
-.icon-browser:hover {
+.icon-browser-www:hover {
 	background: transparent url(../img/browser-www_hover.png) no-repeat;
 }
 
@@ -3030,6 +3027,7 @@ main.main {
 
 	.sidebar-anwendung {
 		float: left;
+		font-size: @font-size-small;
 		margin-bottom: 30px;
 		padding-right: 20px;
 
@@ -3136,6 +3134,7 @@ table#table-data {
 
 	.sidebar-datentool {
 		float: left;
+		font-size: @font-size-small;
 		margin-bottom: 30px;
 		padding-right: 20px;
 
