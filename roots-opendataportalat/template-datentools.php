@@ -9,8 +9,8 @@ Template for Datentools overview page
   <div class="container"> 
 
 		<div class="datentools-sidebar filter-sidebar col-md-3" style="float:left;">
-			<?php echo do_shortcode('[ULWPQSF id=772 formtitle="0"]'); ?>
-      		<?php echo do_shortcode('[ULWPQSF id=773 button=0 formtitle="0"]'); ?>
+			<?php echo do_shortcode('[ULWPQSF id=744 formtitle="0"]'); ?>
+      		<?php echo do_shortcode('[ULWPQSF id=745 button=0 formtitle="0"]'); ?>
 	    </div>
     
 	    <script type="text/javascript">
@@ -96,10 +96,10 @@ Template for Datentools overview page
 				}
 				
 				//Overwrite text search filter
-				overwriteTextSearchFilter("#uwpqsffrom_772", "Datentools durchsuchen");
+				overwriteTextSearchFilter("#uwpqsffrom_744", "Datentools durchsuchen");
 				
 				// Overwrite search filter for Taxonomy Filter 'Kategorie'
-				overwriteSearchFilter("#uwpqsffrom_773", "#uwpqsffrom_773 .uwpqsf_class.tax-check-0");
+				overwriteSearchFilter("#uwpqsffrom_745", "#uwpqsffrom_745 .uwpqsf_class.tax-check-0");
 				
 				//Call reset all search filters function
 				resetAllSearchFilters();

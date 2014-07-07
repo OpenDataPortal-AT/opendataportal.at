@@ -1029,16 +1029,16 @@ function customize_output($results , $arg, $id, $getdata ){
 	$result = '';
 	
 	// Filter ID´s used in 'Anwendungen'
-	$anwendungen_search_filters = '771';
-	$anwendungen_text_search = '770';
+	$anwendungen_search_filters = '740';
+	$anwendungen_text_search = '739';
 	
 	// Filter ID´s used in 'Datatools'
-	$datatools_search_filters = '773';
-	$datatools_text_search = '772';
+	$datatools_search_filters = '745';
+	$datatools_text_search = '744';
 	
 	// Filter ID´s used in 'News'
-	$news_search_filters = '769';
-	$news_text_search = '768';
+	$news_search_filters = '738';
+	$news_text_search = '737';
 
 
 	// The Loop

@@ -2124,8 +2124,8 @@ main.main {
 		padding: 0px 20px 20px 0px;
 	}
 
-	.no-thumb {
-		background-color: gray;
+	.preview-content.no-thumb {
+		padding-left:0
 	}
 
 	.preview-content {
@@ -2187,8 +2187,8 @@ main.main {
 		padding: 0px 20px 20px 0px;
 	}
 
-	.no-thumb {
-		background-color: gray;
+	.preview-content.no-thumb {
+		padding-left:0
 	}
 
 	.preview-content {
@@ -3082,12 +3082,11 @@ main.main {
 		.sidebar-anwendung-betriebssysteme {
 
 			.icon-betriebssystem {
-				width: 16px;
-				height: 16px; 
 				margin: 3px 0px;
 				padding-left: 20px;
 				display: block;
 			}
+			
 		}
 	}
 }
@@ -3190,11 +3189,33 @@ table#table-data {
 		.sidebar-datentool-betriebssysteme {
 
 			.icon-betriebssystem {
-				width: 16px;
-				height: 16px; 
 				margin: 3px 0px;
 				padding-left: 20px;
 				display: block;
+			}
+			
+			.icon-mac-os {
+				background: transparent url(../img/ios.png) no-repeat;
+			}
+
+			.icon-mac-os:hover {
+				background: transparent url(../img/ios_hover.png) no-repeat;
+			}
+
+			.icon-windows {
+				background: transparent url(../img/windows-phone.png) no-repeat;
+			}
+
+			.icon-windows:hover {
+				background: transparent url(../img/windows-phone_hover.png) no-repeat;
+			}
+
+			.icon-linux {
+				background: transparent url(../img/linux_icon.png) no-repeat;
+			}
+
+			.icon-linux:hover {
+				background: transparent url(../img/linux_icon_hover.png) no-repeat;
 			}
 		}
 	}

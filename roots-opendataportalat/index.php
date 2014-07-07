@@ -25,8 +25,8 @@ if(is_search()) {
 		<div class="container">
 	  
 			<div class="news-sidebar filter-sidebar col-md-3" style="float:left;">
-				<?php echo do_shortcode('[ULWPQSF id=768 formtitle="0"]'); ?>
-				<?php echo do_shortcode('[ULWPQSF id=769 button=0 formtitle="0"]'); ?>
+				<?php echo do_shortcode('[ULWPQSF id=737 formtitle="0"]'); ?>
+				<?php echo do_shortcode('[ULWPQSF id=738 button=0 formtitle="0"]'); ?>
 			</div>
 	    
 		    <script type="text/javascript">
@@ -112,13 +112,13 @@ if(is_search()) {
 					}
 				
 					//Overwrite text search filter
-					overwriteTextSearchFilter("#uwpqsffrom_768", "News durchsuchen");
+					overwriteTextSearchFilter("#uwpqsffrom_737", "News durchsuchen");
 					
 					// Overwrite search filter for Taxonomy Filter 'Themen'
-					overwriteSearchFilter("#uwpqsffrom_769", "#uwpqsffrom_769 .uwpqsf_class.tax-check-0");
+					overwriteSearchFilter("#uwpqsffrom_738", "#uwpqsffrom_738 .uwpqsf_class.tax-check-0");
 					
 					// Overwrite search filter for Taxonomy Filter 'Kategorie'
-					overwriteSearchFilter("#uwpqsffrom_769", "#uwpqsffrom_769 .uwpqsf_class.tax-check-1");
+					overwriteSearchFilter("#uwpqsffrom_738", "#uwpqsffrom_738 .uwpqsf_class.tax-check-1");
 					
 					//Call reset all search filters function
 					resetAllSearchFilters();

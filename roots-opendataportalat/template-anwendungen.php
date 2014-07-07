@@ -9,8 +9,8 @@ Description: Template for applications overview page
 	<div class="container"> 
   
 		<div class="anwendungen-sidebar filter-sidebar col-md-3" style="float:left;">
-			<?php echo do_shortcode('[ULWPQSF id=770 formtitle="0"]'); ?>
-			<?php echo do_shortcode('[ULWPQSF id=771 button=0 formtitle="0"]'); ?>
+			<?php echo do_shortcode('[ULWPQSF id=739 formtitle="0"]'); ?>
+			<?php echo do_shortcode('[ULWPQSF id=740 button=0 formtitle="0"]'); ?>
 		</div>
     
 	    <script type="text/javascript">
@@ -96,10 +96,10 @@ Description: Template for applications overview page
 				}
 				
 				//Overwrite text search filter
-				overwriteTextSearchFilter("#uwpqsffrom_770", "Anwendungen durchsuchen");
+				overwriteTextSearchFilter("#uwpqsffrom_739", "Anwendungen durchsuchen");
 				
 				// Overwrite search filter for Taxonomy Filter 'Kategorie'
-				overwriteSearchFilter("#uwpqsffrom_771", "#uwpqsffrom_771 .uwpqsf_class.tax-check-0");
+				overwriteSearchFilter("#uwpqsffrom_740", "#uwpqsffrom_740 .uwpqsf_class.tax-check-0");
 				
 				//Call reset all search filters function
 				resetAllSearchFilters();
