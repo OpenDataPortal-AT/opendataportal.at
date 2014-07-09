@@ -32,9 +32,11 @@ Footer
 
 				<nav class="sprachauswahl row" role="navigation">
 					<h2>Sprachauswahl</h2>
-					<select class="form-control form-sprachauswahl">
-  						<option>Deutsch</option>
-					</select>
+					<div class="select-style">
+						<select class="form-control form-sprachauswahl">
+  							<option>Deutsch</option>
+						</select>
+					</div>
 				</nav>
 				<!--
 				<div class="footer-searchform row">

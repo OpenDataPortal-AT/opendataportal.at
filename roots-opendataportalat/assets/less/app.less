@@ -821,7 +821,7 @@ article.hentry,
 
 .content-info {
 	background: #4A5F72 url(../img/pattern_blue.png) 0 0 repeat;
-	padding-bottom: 20px;
+	padding-bottom: 30px;
 }
 
 .wrapper-footer-logos {
@@ -853,11 +853,36 @@ article.hentry,
 
 .wrapper-footer-content {
 
-	padding-top: 20px;
+	padding-top: 30px;
 
 	.footer-sprachauswahl {
 
 		padding-right: 40px;
+		
+		.select-style {
+			width: 120px;
+			border-radius: 3px;
+			overflow: hidden;
+			background: #fafafa url("../img/expand_blue.png") no-repeat 90% 50%;
+		}
+
+		.select-style select {
+			padding: 2px 4px;
+			width: 130%;
+			height:25px;
+			font-size:@font-size-small;
+			color:@brand-blue;
+			border: none;
+			box-shadow: none;
+			background: transparent;
+			background-image: none;
+			-webkit-appearance: none;
+		}
+
+		.select-style select:focus {
+			outline: none;
+		}
+		
 
 		h2 {
 			color: @gray-lightish;
@@ -885,7 +910,7 @@ article.hentry,
 		ul {
 			padding-left: 22px;
 
-			li {
+			li {font-size:@font-size-small;
 				list-style-image:url('../img/rss.png');
 
 				a {
@@ -1039,61 +1064,90 @@ figure.alignnone {
 
 nav.post-nav {
 
-	.btn-first {
-		background: url(../img/pager_allback.png) center center no-repeat @brand-green;
+	.btn {
 		display: inline-block;
-	 	width: 28px;
-		height: 28px;
-		border-radius: 14px;
+	 	width: 24px;
+		height: 24px;
+		border-radius: 12px;
+		padding:0;
+		border:1px solid #638e2a;
+		box-shadow:0 0 4px rgba(255, 255, 255, 0.5) inset;
+	}
+
+	.btn-first,.btn-first-disabled {
+		background: url("../img/pager_allback.png") center center no-repeat, -webkit-linear-gradient(top, @button-green-dark, @button-green-light);
+		background: url("../img/pager_allback.png") center center no-repeat, -moz-linear-gradient(top, @button-green-dark, @button-green-light);
+		background: url("../img/pager_allback.png") center center no-repeat, -o-linear-gradient(top, @button-green-dark, @button-green-light);
+		background: url("../img/pager_allback.png") center center no-repeat, linear-gradient(top, @button-green-dark, @button-green-light);
+		
+	}
+	
+	.btn-first:hover {
+		background: url("../img/pager_allback.png") center center no-repeat, -webkit-linear-gradient(top, @button-green-light, @button-green-dark);
+		background: url("../img/pager_allback.png") center center no-repeat, -moz-linear-gradient(top, @button-green-light, @button-green-dark);
+		background: url("../img/pager_allback.png") center center no-repeat, -o-linear-gradient(top, @button-green-light, @button-green-dark);
+		background: url("../img/pager_allback.png") center center no-repeat, linear-gradient(top, @button-green-light, @button-green-dark);
+		
 	}
 	.btn-first-disabled {
-		background: url(../img/pager_allback.png) center center no-repeat @gray-lightish;
-		display: inline-block;
-	 	width: 28px;
-		height: 28px;
-		border-radius: 14px;
+		opacity:0.5;
+		
 	}
-	.btn-previous {
-		background: url(../img/pager_back.png) center center no-repeat @brand-green;
-		display: inline-block;
-	 	width: 28px;
-		height: 28px;
-		border-radius: 14px;
+	.btn-previous,.btn-previous-disabled {
+		background: url("../img/pager_back.png") center center no-repeat, -webkit-linear-gradient(top, @button-green-dark, @button-green-light);
+		background: url("../img/pager_back.png") center center no-repeat, -moz-linear-gradient(top, @button-green-dark, @button-green-light);
+		background: url("../img/pager_back.png") center center no-repeat, -o-linear-gradient(top, @button-green-dark, @button-green-light);
+		background: url("../img/pager_back.png") center center no-repeat, linear-gradient(top, @button-green-dark, @button-green-light);
+		
+	}
+	.btn-previous:hover {
+		background: url("../img/pager_back.png") center center no-repeat, -webkit-linear-gradient(top, @button-green-light, @button-green-dark);
+		background: url("../img/pager_back.png") center center no-repeat, -moz-linear-gradient(top, @button-green-light, @button-green-dark);
+		background: url("../img/pager_back.png") center center no-repeat, -o-linear-gradient(top, @button-green-light, @button-green-dark);
+		background: url("../img/pager_back.png") center center no-repeat, linear-gradient(top, @button-green-light, @button-green-dark);
+		
 	}
 	.btn-previous-disabled {
-		background: url(../img/pager_back.png) center center no-repeat @gray-lightish;
-		display: inline-block;
-	 	width: 28px;
-		height: 28px;
-		border-radius: 14px;
+		opacity:0.5;
+		
 	}
-	.btn-next {
-		background: url(../img/pager_forward.png) center center no-repeat @brand-green;
-		display: inline-block;
-	 	width: 28px;
-		height: 28px;
-		border-radius: 14px;
+	.btn-next,.btn-next-disabled {
+		background: url("../img/pager_forward.png") center center no-repeat, -webkit-linear-gradient(top, @button-green-dark, @button-green-light);
+		background: url("../img/pager_forward.png") center center no-repeat, -moz-linear-gradient(top, @button-green-dark, @button-green-light);
+		background: url("../img/pager_forward.png") center center no-repeat, -o-linear-gradient(top, @button-green-dark, @button-green-light);
+		background: url("../img/pager_forward.png") center center no-repeat, linear-gradient(top, @button-green-dark, @button-green-light);
+		
+	}
+	
+	.btn-next:hover {
+		background: url("../img/pager_forward.png") center center no-repeat, -webkit-linear-gradient(top, @button-green-light, @button-green-dark);
+		background: url("../img/pager_forward.png") center center no-repeat, -moz-linear-gradient(top, @button-green-light, @button-green-dark);
+		background: url("../img/pager_forward.png") center center no-repeat, -o-linear-gradient(top, @button-green-light, @button-green-dark);
+		background: url("../img/pager_forward.png") center center no-repeat, linear-gradient(top, @button-green-light, @button-green-dark);
+		
 	}
 	.btn-next-disabled {
-		background: url(../img/pager_forward.png) center center no-repeat @gray-lightish;
-		display: inline-block;
-	 	width: 28px;
-		height: 28px;
-		border-radius: 14px;
+		opacity:0.5;
+		
 	}
-	.btn-last {
-		background: url(../img/pager_allforward.png) center center no-repeat @brand-green;
-		display: inline-block;
-	 	width: 28px;
-		height: 28px;
-		border-radius: 14px;
+	.btn-last,.btn-last-disabled {
+		background: url("../img/pager_allforward.png") center center no-repeat, -webkit-linear-gradient(top, @button-green-dark, @button-green-light);
+		background: url("../img/pager_allforward.png") center center no-repeat, -moz-linear-gradient(top, @button-green-dark, @button-green-light);
+		background: url("../img/pager_allforward.png") center center no-repeat, -o-linear-gradient(top, @button-green-dark, @button-green-light);
+		background: url("../img/pager_allforward.png") center center no-repeat, linear-gradient(top, @button-green-dark, @button-green-light);
+		
+	}
+	
+	.btn-last:hover {
+		background: url("../img/pager_allforward.png") center center no-repeat, -webkit-linear-gradient(top, @button-green-light, @button-green-dark);
+		background: url("../img/pager_allforward.png") center center no-repeat, -moz-linear-gradient(top, @button-green-light, @button-green-dark);
+		background: url("../img/pager_allforward.png") center center no-repeat, -o-linear-gradient(top, @button-green-light, @button-green-dark);
+		background: url("../img/pager_allforward.png") center center no-repeat, linear-gradient(top, @button-green-light, @button-green-dark);
+		
 	}
 	.btn-last-disabled {
-		background: url(../img/pager_allforward.png) center center no-repeat @gray-lightish;
-		display: inline-block;
-	 	width: 28px;
-		height: 28px;
-		border-radius: 14px;
+		opacity:0.5;
+		
 	}
 }
 
@@ -2806,8 +2860,8 @@ main.main {
   font-weight: bold !important;
   clear: both;
   width: 100%;
-  background:#b1c0bd;
-  border:1px solid #a6b6b3;
+  background:#B2C0BD;
+  border:1px solid #A6B6B3;
   font-size:12px;
   color:#fefefe;
   border-radius: 15px;
@@ -2816,7 +2870,10 @@ main.main {
 
 .filter-search .uwpqsf_class > span[class*='taxolabel-']:hover,
 .filter-search .uwpqsf_class > span[class*='taxolabel-']:focus {
-  cursor:pointer;
+  background-color:#93A8A3;
+	border-color:#829A95;
+  	cursor:pointer;
+  
 }
 
 .filter-search .uwpqsf_class > span[class*='taxolabel-'].expanded .collapsible-box-img {
@@ -2866,16 +2923,15 @@ main.main {
   color: #fff;
   font-size: 12px;
   padding: 1px 0px 2px 20px;
-  border: 1px solid #4a5f72;
   border-radius: 5px;
-  background: url("../img/reset_filter.png") 7px 6px no-repeat #4a5f72;
+  background: url("../img/reset_filter.png") 7px 6px no-repeat #4A5F72;
 }
 .filter-search .uwpqsf_class .resetFilter:hover,
 .filter-search .uwpqsf_class .resetFilter:focus,
 .resetFilter.all .inner:hover,
 .resetFilter.all .inner:focus  {
-	background-color:#556471;
-  cursor:pointer;
+  	cursor:pointer;
+  	background-color:#344B60;
 }
 
 .filter-search [class*='tax-check-'] label {
@@ -2992,7 +3048,7 @@ main.main {
 	background: transparent url(../img/browser-www.png) no-repeat;
 }
 
-.icon-browser-www:hover {
+.icon-browser:hover {
 	background: transparent url(../img/browser-www_hover.png) no-repeat;
 }
 

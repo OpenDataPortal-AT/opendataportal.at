@@ -7,7 +7,6 @@
 		$ext_up = '';
 		$next = $paged+1;
 		$previous = $paged-1; 
-
 		if($paged <= 0 ) {
 			$ext_down = '-disabled'; ?>
 			<button class="btn btn-first<?php echo $ext_down; ?>"></button>
