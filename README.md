@@ -1,58 +1,91 @@
 opendataportal.at
 ==============
 
-[opendataportal.at](https://www.opendataportal.at/) basiert auf zwei bewährten Open Source Projekten: [WordPress](http://wordpress.org) und [CKAN](http://ckan.org). Der Inhalt der auf opendataportal.at sichtbar ist stammt aus Wordpress, während der Datenkatalog unter data.opendataportal.at auf CKAN läuft.
+[opendataportal.at](https://www.opendataportal.at/) is based on two robust open source projects: [WordPress](http://wordpress.org) and [CKAN](http://ckan.org). The content seen at opendataportal.at is powered by WordPress while the data catalog at data.opendataportal.at is powered by CKAN.
 
-Dieses Repository hat einen [Issue Tracker](https://github.com/OpenDataPortal-AT/opendataportal.at/issues) für Anfragen zu Code, Fehlerberichte und Feature-Wünsche bezüglich dieser Website. Aktuell wird dieses Repository nur für die Quellcode-Versionierung des Wordpress Themes verwendet, aber es sind unten auch Punkte zu relevanten CKAN Code dokumentiert.
+This repository provides the [Issue Tracker](https://github.com/OpenDataPortal-AT/opendataportal.at/issues) for all code, bugs, and feature requests related to these websites. Currently the repository is only used for source version control on the code for the WordPress template, but you will also find pointers to the relevant CKAN code documented below.
 
 ## WordPress
-Die aktuellste Version von Wordpress ist erhältlich unter: http://wordpress.org/download/
+The latest version of WordPress is available at: http://wordpress.org/download/
 
 ### Theme
-Das Theme ist im `/themes/` Ordner zu finden. Das Theme basiert auf [roots.io](http://roots.io/starter-theme/).
+The theme is provided in the `/themes/` folder. The theme is based on [roots.io](http://roots.io/starter-theme/).
 
 ### Plugins
-Auf der [plugins](plugins.md) Seite  findest du eine Liste aller Plugins die verwendet wurden.
+See the [plugins](plugins.md) page for a list of all the plugins used.
 
 ### Deployment
-Dies ist eine Standard Wordpress Installation, daher bitte unter [WordPress Docs](http://codex.wordpress.org/Installing_WordPress) nachsehen.
+This is a standard WordPress install, so please refer to the [WordPress Docs](http://codex.wordpress.org/Installing_WordPress).
+
+After installation those things need to be done:
+- copy custom fields (works via export and import function)
+- activate templates for contact, landing page, news page, applications page and datentools page
+- copy forms for submission of datentools and anwendungen einreichen and contact
+- set filter&search for applications, datentools, highlights and news 
+
+The configuration of wordpress and the used plugins can be found in [configuration](configuration.md)
 
 ## CKAN
-data.opendataportal.at ist eine CKAN Instanz und ist auf [Github](https://github.com/okfn/ckan/) zu finden. Wir empfehlen die [letzte Version von CKAN](http://ckan.org/developers/docs-and-download/). 
+The code used for the data.opendataportal.at instance of CKAN is available on [Github](https://github.com/okfn/ckan/tree/release-datagov), but we recommend the [latest version of CKAN](http://ckan.org/developers/docs-and-download/).
 
 ### Extensions
-Das ODP Team hat folgende CKAN Erweiterungen entwickelt:
-- [ckanext-odpat](https://github.com/OpenDataPortal-AT/ckanext-odpat): Anpassungen von Styling
-- [ckanext-odpat-form](https://github.com/OpenDataPortal-AT/ckanext-odpat-form): Eingabeformular
+Community extensions:
+- [datastore](http://docs.ckan.org/en/latest/maintaining/datastore.html)
+- [filestore](http://docs.ckan.org/en/latest/maintaining/filestore.html)
+- [datapusher](http://docs.ckan.org/projects/datapusher/en/latest/)
+
+The ODP team developed theses CKAN extensions:
+- [ckanext-odpat](https://github.com/OpenDataPortal-AT/ckanext-odpat): adaptation of layout & design, structre and text
+- [ckanext-odpat-form](https://github.com/OpenDataPortal-AT/ckanext-odpat-form): Form and adaptation of functions and metadata structure to OGD Austria Metadatastandard 2.2
 
 ### Deployment
-Wir sind dabei die Documentation dazu zu Verbessern. 
+We are in the process of improving documentation.
 
-## Beitragen
+## Server
+On the server following software is installed:
+- postgresql
+- git
+- svn
+- python
+- php
 
-Im Sinne des Freien Software Geistes ist jedeR ermutigt beim Verbessern des Projektes zu helfen.
+**CRON Jobs**
+- feedwordpress
 
-Hier ein paar Wege und Möglichkeiten wie du beitragen kannst:
+## Contributing
 
-- durch verwenden von alpha, beta, und prerelease Versionen
-- durch berichten von Fehlern
-- durch vorschlagen von neuen Features
-- durch übersetzen in eine andere Sprache
-- durch schreiben oder bearbeiten der Dokumentation
-- durch schreiben von Spezifikationen
-- durch coding (**kein Pull Request ist zu klein!!**: fixe Typos im User-Interface, füge Kommentare hinzu, bereinige inkosistenten Whitespace)
-- durch refactoring von Quellcode
-- durch schließen von Issues
-- durch reviewn von Pull Requests
+In the spirit of free software, everyone is encouraged to help improve this project.
 
-Wenn du bereit bist, reiche einen [Pull Request](https://github.com/OpenDataPortal-AT/opendataportal.at/pulls) ein.
+Here are some ways you can contribute:
 
-## Berichten
-Wir verwenden den [GitHub Issue Tracker](https://github.com/OpenDataPortal-AT/opendataportal.at/issues) um Fehler und Features zu verfolgen. Bitte sieh bevor ein Bug, ein Bericht oder ein Feature berichtet wird nach, ob die Anfrage nicht bereits gemacht wurde. Wenn ein Fehler berichtet wird bitte einen Screenshot der das Problem demonstriert zur Verfügung stellen. 
+- by using alpha, beta, and prerelease versions
+- by reporting bugs
+- by suggesting new features
+- by translating to a new language
+- by writing or editing documentation
+- by writing specifications
+- by writing code (**no pull request is too small**: fix typos in the user interface, add code comments, clean up inconsistent whitespace)
+- by refactoring code
+- by closing issues
+- by reviewing pull requests
 
-## Dokumentation
+When you are ready, submit a [Pull Request](https://github.com/OpenDataPortal-AT/opendataportal.at/pulls).
 
-Wir sind dabei die Dokumentation zu Verbessern. Bitte später wieder kommen oder [uns hier kontaktieren](https://www.opendataportal.at/kontakt) für nähere Informationen über unsere Installation.
+## Submitting an Issue
+We use the [GitHub Issue Tracker](https://github.com/OpenDataPortal-AT/opendataportal.at/issues) to track bugs and features. Before submitting a bug report or feature request, check to make sure it hasn't already been submitted. When submitting a bug report, please try to provide a screenshot that demonstrates the problem.
+
+## Documentation
+We are still in progress to improve the documentation. Please [contact us](https://www.opendataportal.at/kontakt) for further information about our installations.
+
+## License
+The project utilizes code licensed under the terms of the GNU General Public License and therefore is licensed under GPL v2 or later.
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+Visit http://www.gnu.org/licenses/ to learn more about the GNU General Public License.
+
 
 
 
