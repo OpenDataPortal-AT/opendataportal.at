@@ -21,15 +21,11 @@ Preview of applications rendered in template-anwendungen.php and template-thema.
 			<span class="einreichungsdatum">
 				<?php 
 				$sub_date = get_post_meta(get_the_id(), 'tool_einreichdatum', single); 
-				echo $sub_date;
-				?>
+				echo $sub_date; ?>
 			</span> &#124; 
 			<span class="einreicherIn">
 				<?php echo get_post_meta(get_the_id(), 'tool_name_einreicherin', single); ?>
 			</span> &#124; 
-			<span class="link-themen">
-				Themen: <?php get_themen_preview(); ?>
-			</span> 
 		</span>
 
 		<div class="preview-excerpt">
