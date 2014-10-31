@@ -63,9 +63,10 @@ Footer
 	<div class="footer-copyright-links row">
 		<span class="footer-links">
 			<a href="<?php echo home_url(); ?>/faqs" title="Frequently Asked Questions">FAQs</a> &#124; 
-			<a href="<?php echo home_url(); ?>/impressum" title="Impressum">Impressum</a> &#124; 
 			<a href="<?php echo home_url(); ?>/netiquette" title="Netiquette">Netiquette</a> &#124; 
 			<a href="<?php echo home_url(); ?>/nutzungsbedingungen" title="Nutzungsbedingungen">Nutzungsbedingungen</a> &#124; 
+			<a href="<?php echo home_url(); ?>/sitemap.xml" title="Sitemap">Sitemap</a> &#124; 
+			<a href="<?php echo home_url(); ?>/impressum" title="Impressum">Impressum</a> &#124; 
 			<a href="<?php echo home_url(); ?>/kontakt" title="Kontakt">Kontakt</a>
 		</span>
 	</div>
