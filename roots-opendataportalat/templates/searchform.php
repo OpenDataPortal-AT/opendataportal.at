@@ -19,7 +19,7 @@
  			<input type="radio" name="optionsSearch" id="optionsRadios-ckan" value="ckan" onclick="activateCKAN();" checked>Datenkatalog
  		</label>
  		<label>
- 			<input type="radio" name="optionsSearch" id="optionsRadios-wordpress" value="wordpress" onclick="activateWordpress();">Anwendungen &amp; News
+ 			<input type="radio" name="optionsSearch" id="optionsRadios-wordpress" value="wordpress" onclick="activateWordpress();">Portal
  		</label>
   </div>
 </form>
