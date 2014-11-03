@@ -2391,6 +2391,16 @@ main.main {
 	font-weight: bold;
 }
 
+.wrapper-thema-datasets {
+	h3 {
+		font-size: @font-size-large;
+		font-family: open-sans-bold;
+		text-shadow: 0.05em 0.05em @gray-dark;
+
+		a {
+		}
+	}
+}
 
 .wrapper-thema-content {
 
@@ -2544,7 +2554,6 @@ main.main {
 
 
 
-
 /* ==========================================================================
 	 TEMPLATE THEMEN PAGE
 	 ========================================================================== */
@@ -2562,7 +2571,8 @@ main.main {
 	margin: 0 auto;
 	padding-bottom: 30px;
 
-	h3 {font-size:@font-size-large;
+	h3 {
+		font-size:@font-size-large;
 		text-shadow: 0.05em 0.05em #333;
 		a {
 			color: white;
@@ -2577,14 +2587,10 @@ main.main {
 		margin: 20px 30px 40px;
 		display:inline-block;
 	}
-	
 	.logo-thema h4{
 	color:@brand-green;
 	text-shadow: 0.05em 0.05em white;}
 }
-
-
-
 
 
 /* ==========================================================================
@@ -2711,9 +2717,11 @@ main.main {
 	}
 }
 
+
 /* ==========================================================================
 	 SEARCH FILTERS
 	 ========================================================================== */
+
 
 .sentence-num-posts {
   font-size: 12px;
@@ -3089,38 +3097,6 @@ main.main {
 		}
 	}
 }
-
-
-/* ==========================================================================
-	 TABLE CKAN DATA
-	 ========================================================================== */
-
-table#table-data {
-
-	tr {
-		th {
-			background-color: @brand-blue;
-			font-family: open-sans-bold;
-			padding-left: 20px;
-			color: white;
-			border-top-left-radius: 6px;
-			border-top-right-radius: 6px;
-
-			.last {
-				border-bottom-left-radius: 6px;
-				border-bottom-right-radius: 6px;
-			}
-		}
-		td {
-			padding-left: 20px;
-			
-			a {
-				color: @brand-blue;
-			}
-		}
-	}
-}
-
 
 
 /* ==========================================================================
