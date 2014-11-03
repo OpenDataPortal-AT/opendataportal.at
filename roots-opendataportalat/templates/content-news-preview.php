@@ -13,7 +13,7 @@ Preview of news rendered in index.php, front-page.php and template-thema.php.
 
 	<div class="news-preview-metadata text-italic">
 		
-		<span class="link-themen"><?php get_themen_preview_landingpage(); ?></span>&#44;&#32;
+		<span class="link-themen"><?php get_themen_preview_landingpage(); ?>
 
 		<span class="news-source"><?php $source = get_newssource(); ?></span>&#44;&#32;
 
