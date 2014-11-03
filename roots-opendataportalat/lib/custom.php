@@ -506,8 +506,11 @@ function get_themen_preview_landingpage() {
 
 	$themen_list = wp_get_post_terms(get_the_ID(), 'themen', array("fields" => "all"));
 
-	foreach ($themen_list as $thema) {
-		echo '<a class="icon-thema" href="' . home_url() . '/' . $thema->slug . '" title="' . $thema->name . '"><img src="' . get_template_directory_uri() . '/assets/img/' . $thema->slug . '_small.png" alt="' . $thema->name . '"></a>';
+	if($themen_list) {
+		foreach ($themen_list as $thema) {
+			echo '<a class="icon-thema" href="' . home_url() . '/' . $thema->slug . '" title="' . $thema->name . '"><img src="' . get_template_directory_uri() . '/assets/img/' . $thema->slug . '_small.png" alt="' . $thema->name . '"></a>';
+		}
+		echo "</span>&#44;&#32;";
 	}
 }
 
