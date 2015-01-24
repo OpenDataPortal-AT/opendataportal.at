@@ -17,11 +17,12 @@
 
 </div>
 
+<div class="row col-sm-12">
 [captchac captcha-contact]
 [captchar captcha-contact]
 
 <p class="row">[submit class:btn class:btn-primary "Absenden"]</p>
-
+</div>
 
 ## Mail
 

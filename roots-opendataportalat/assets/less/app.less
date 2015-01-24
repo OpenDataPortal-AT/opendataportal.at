@@ -258,6 +258,10 @@ body.page .intro .container p,
 		}
 
 	}
+	#open-data-inside {
+		float:left;
+		margin-left:40px;
+	}
 	
 	#header-search {
 
@@ -1968,7 +1972,6 @@ main.main {
 				padding-bottom: 10px;
 
 				.icon-thema {
-					margin-right: 3px;
 				}
 
 				.news-source {
@@ -1980,13 +1983,14 @@ main.main {
 					img {
 						padding-right: 0px;
 						margin-left: 5px;
-						margin-right: 1px;
+						margin-right: 2px;
 					}
 				}
 				.meta-comments {
 
 					img {
 						margin-left: 3px;
+						margin-right: 2px;
 					}
 				}
 			}
@@ -2083,7 +2087,6 @@ main.main {
 		color: @gray-blue;
 
 		.icon-thema {
-			margin-left: 5px;
 		}
 	}
 
@@ -2341,7 +2344,6 @@ main.main {
 		.icon-thema {
 
 			img {
-				margin-right: 5px;	
 				position: relative;
 				top: -2px;
 			}
@@ -2594,15 +2596,19 @@ main.main {
 
 
 /* ==========================================================================
-	 ANWENDUNG EINREICHEN PAGE TEMPLATE
+	 ANWENDUNG & DATENTOOL EINREICHEN PAGE TEMPLATE
 	 ========================================================================== */
 
-.anwendung-einreichen,.datentool-einreichen, .kontakt {
-
+.anwendung-einreichen, .datentool-einreichen, .kontakt {
 
 	.wpcf7-form {
 		.row{
-			clear:both;}
+			clear:both;
+		}
+
+		.wpcf7-captchac {
+			padding-bottom: 10px;
+		}
 
 		h3 {
 			font-size: @font-size-medium;
@@ -3081,9 +3087,6 @@ main.main {
 			h2 {
 				margin-top: 0px;
 			}
-			.icon-thema img {
-				margin-right: 3px;
-			}
 		}
 		.sidebar-anwendung-betriebssysteme {
 
@@ -3098,6 +3101,9 @@ main.main {
 	}
 }
 
+.icon-thema img {
+	margin-right: 4px;
+}
 
 /* ==========================================================================
 	 DATENTOOL SINGLE
