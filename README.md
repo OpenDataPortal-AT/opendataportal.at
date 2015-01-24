@@ -1,7 +1,7 @@
 opendataportal.at
 ==============
 
-[opendataportal.at](https://www.opendataportal.at/) is based on two robust open source projects: [WordPress](http://wordpress.org) and [CKAN](http://ckan.org). The content seen at opendataportal.at is powered by WordPress while the data catalog at data.opendataportal.at is powered by CKAN.
+[opendataportal.at](https://www.opendataportal.at/) is based on two robust open source projects: [WordPress](http://wordpress.org) and [CKAN](http://ckan.org). The content seen at [opendataportal.at](http://opendataportal.at) is powered by WordPress while the data catalog at [data.opendataportal.at](http://data.opendataportal.at) is powered by CKAN.
 
 This repository provides the [Issue Tracker](https://github.com/OpenDataPortal-AT/opendataportal.at/issues) for all code, bugs, and feature requests related to these websites. Currently the repository is only used for source version control on the code for the WordPress template, but you will also find pointers to the relevant CKAN code documented below.
 
@@ -19,14 +19,23 @@ This is a standard WordPress install, so please refer to the [WordPress Docs](ht
 
 After installation those things need to be done:
 - copy custom fields (works via export and import function)
-- activate templates for contact, landing page, news page, applications page and datentools page
+- activate templates:
+	- contact: Kontakt 
+	- landing page (Front Page)
+	- submit application: Anwendung einreichen
+	- submit datatool: Datentool einreichen
+	- successfull application submission: Erfolg Anwendungen einreichen 
+	- applications: Highlights
+	- datatools: Datentools
+	- theme: Thema
+	- themes: Themen
 - copy forms for submission of datentools and anwendungen einreichen and contact
 - set filter&search for applications, datentools, highlights and news 
 
 The configuration of wordpress and the used plugins can be found in [configuration](configuration.md)
 
 ## CKAN
-The code used for the data.opendataportal.at instance of CKAN is available on [Github](https://github.com/okfn/ckan/tree/release-datagov), but we recommend the [latest version of CKAN](http://ckan.org/developers/docs-and-download/).
+The code used for the [data.opendataportal.at](https://data.opendataportal.at/) instance of CKAN is available on [Github](https://github.com/okfn/ckan/tree/release-datagov), but we recommend the [latest version of CKAN](http://ckan.org/developers/docs-and-download/).
 
 ### Extensions
 Community extensions:
@@ -34,7 +43,7 @@ Community extensions:
 - [filestore](http://docs.ckan.org/en/latest/maintaining/filestore.html)
 - [datapusher](http://docs.ckan.org/projects/datapusher/en/latest/)
 
-The ODP team developed theses CKAN extensions:
+The ODP team developed these CKAN extensions:
 - [ckanext-odpat](https://github.com/OpenDataPortal-AT/ckanext-odpat): adaptation of layout & design, structre and text
 - [ckanext-odpat-form](https://github.com/OpenDataPortal-AT/ckanext-odpat-form): Form and adaptation of functions and metadata structure to OGD Austria Metadatastandard 2.2
 

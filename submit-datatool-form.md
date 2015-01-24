@@ -1,3 +1,4 @@
+**Form to submit datatools.**
 
 ## Form
 <div class="col-sm-9">
@@ -65,6 +66,9 @@
 <h5>Optionale Bemerkung</h5>
 [textarea tool_bemerkung_einreicherin class:form-control class:size-large]
 </div>
+
+[captchac captcha-datentools]
+[captchar captcha-datentools]
 
 <p class="row">[submit class:btn class:btn-primary "Absenden"]</p>
 

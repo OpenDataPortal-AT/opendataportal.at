@@ -1,3 +1,4 @@
+**Form to contact us.**
 
 ## Form
 
@@ -15,6 +16,10 @@
 [textarea nachricht class:form-control class:size-large]
 
 </div>
+
+[captchac captcha-contact]
+[captchar captcha-contact]
+
 <p class="row">[submit class:btn class:btn-primary "Absenden"]</p>
 
 
