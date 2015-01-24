@@ -67,10 +67,12 @@
 [textarea tool_bemerkung_einreicherin class:form-control class:size-large]
 </div>
 
+<div class="row col-sm-12">
 [captchac captcha-datentools]
 [captchar captcha-datentools]
 
 <p class="row">[submit class:btn class:btn-primary "Absenden"]</p>
+</div>
 
 ## Mail
 Von: [tool_name_einreicherin] <[tool_email_einreicherin]>

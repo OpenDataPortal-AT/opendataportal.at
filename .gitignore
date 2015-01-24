@@ -9,7 +9,8 @@ twentyten/
 vars.php
 index.php
 !/roots-opendataportalat/index.php
-.sublime-project
-.sublime-workspace
+*.sublime-project
+*.sublime-workspace
+footer-piwik.php
 
 

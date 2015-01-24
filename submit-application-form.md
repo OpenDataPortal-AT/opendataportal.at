@@ -117,11 +117,12 @@
 [textarea app_bemerkung_einreicherin class:form-control class:size-large]
 </div>
 
+<div class="row col-sm-12">
 [captchac captcha-anwendungen]
 [captchar captcha-anwendungen]
 
 <p class="row">[submit class:btn class:btn-primary "Absenden"]</p>
-
+</div>
 
 ## Mail
 
