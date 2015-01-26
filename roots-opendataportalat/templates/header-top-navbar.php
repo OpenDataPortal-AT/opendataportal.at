@@ -21,7 +21,12 @@ Header
 								<span class="tagline"><i>All you can <span class="tagline-data">Data</i></span></span>
 						</div>
 	
-						<div class="header-box-right col-sm-6 col-md-offset-2">
+						<div class="header-box-right col-sm-6 col-sm-offset-2">
+
+							<div id="open-data-inside">
+								<a href="http://www.opendatainside.com/mybadge/open-data-portal-oesterreich/">
+								<img src="http://www.opendatainside.com/badge/open-data-portal-oesterreich/" width="100" height="100" alt="Open Data Inside" />
+							</div>
 
 							<div class="header-links">
 								<a class="header-feedback" href="<?php echo home_url(); ?>/kontakt" title="Feedback">Feedback</a>
@@ -29,14 +34,7 @@ Header
 								<a class="header-login" href="http://data.opendataportal.at/user/login" title="Registrieren und Login">Registrieren &amp; Login</a>
 							</div>
 							
-							<!-- 
-							<div class="header-partner-logos col-lg-2">
-								<a class="logo-datagv.at" href="http://data.gv.at/" alt="Data.gv.at"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo_datagv.png" alt="data.gv.at Logo"/></a>
-								<a class="logo-wikidata" href="http://www.wikidata.org" alt="Wikidata"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo_wikidata.png" alt="Wikidata Logo"/></a>
-							</div>
-							-->
-
-							<div id="header-search" class="searchbox-row skip-navigation header-searchform">
+							<div id="header-search" class="searchbox-row skip-navigation header-searchform" >
 								<div class="sr-only skip-link">
 										<a href="main">Springe zum Inhalt</a>
 								</div>
