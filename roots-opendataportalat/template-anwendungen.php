@@ -5,7 +5,21 @@ Description: Template for applications overview page
 */
 ?>
 
+<?php
+/* 
+Das Problem bei der Loop für die Anwendungen ist, dass das mit dem Query von Custom Post Types einige Probleme mit der Pagination macht. 
+Ein Ansatz wäre via add_action( 'pre_get_posts', 'set_post_query', 1 ); in der custom.php den normalen query voerher so zu konfiguriere und den Inhalt der Page via einem meta feld rein zu holen. 
+Hat aber auf Anhieb nicht funktioniert.
+http://wordpress.stackexchange.com/questions/126761/custom-wp-query-pagination-next-posts-link-or-wp-pagenavi-always-empty
+http://codex.wordpress.org/Post_Types
+
+*/
+?>
+
+
 <div class="wrapper-anwendungen-preview col-md-12 container-fluid row" data-searchfilters="<?php echo get_post_meta(get_the_ID(), 'app_searchfilters', single); ?>" data-textsearch="<?php echo get_post_meta(get_the_ID(), 'app_textsearch', single); ?>"> 
+
+
 	<div class="container"> 
   
 		<div class="anwendungen-sidebar filter-sidebar col-md-3" style="float:left;">
@@ -105,9 +119,7 @@ Description: Template for applications overview page
 				resetAllSearchFilters();
 				
 			});
-
 		</script>
-    
 
 	    <div class="wrapper-anwendungen-content container-fluid row col-md-9" style="float:right;">
 
@@ -130,9 +142,10 @@ Description: Template for applications overview page
 	    
 			<?php 
 			$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-			$args = array('post_type' => 'cpt_anwendungen', 'posts_per_page' => 2, 'paged' => $paged );
-			query_posts($args);
-			$num_posts = $wp_query->found_posts; ?>
+			$args = array('post_type' => 'cpt_anwendungen', 'posts_per_page' => 5, 'paged' => $paged );
+			$wp_query = new WP_Query( $args );
+			$num_posts = $wp_query->found_posts; 
+			?>
 
 			<span class="sentence-num-posts">
 				<span class="num-posts"><?php echo $num_posts; ?></span>
@@ -147,14 +160,17 @@ Description: Template for applications overview page
 				echo ' gefunden'; ?>
 			</span>
 
-			<?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
+			<?php if ( $wp_query->have_posts() ) : while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
 		        	<div class="anwendungen-preview row" id="post-<?php echo $post->ID; ?>">
 	          			<?php get_template_part('templates/content', 'anwendung-preview'); ?>
 	        		</div>
 	      		<?php endwhile; // end of the loop. 
 			
-	      	endif; 
-	      	get_template_part('templates/pagination'); ?>
+			endif;
+
+	      	get_template_part('templates/pagination'); 
+	      	wp_reset_postdata(); ?>
+		</div>
 	</div>  
 </div>  
 

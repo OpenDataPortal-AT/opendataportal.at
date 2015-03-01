@@ -1147,3 +1147,31 @@ function prefix_do_this_daily() {
 	update_post_meta($post->ID, 'lp_anzahl_datensets', $num_datasets);
 
 }
+
+function set_post_query( $query ) {
+	/*
+	// not an admin page and is the main query
+	if (!is_admin() && $query->is_main_query()){
+	    if ( is_page_template( 'template-anwendungen.php' ) ) {
+			//echo 'TEST';
+	        //$query->set( 'post_type', 'cpt_anwendungen' );
+	        //$query->set( 'posts_per_page', 2 );
+	        //$query->set( 'paged', 1 );
+	        return;
+	    }
+	}
+
+    if ( is_page('datentools') ) {
+        $query->set( 'posts_per_page', 5 );
+        $query->set( 'post_type', 'cpt_datentools' );
+        $query->set( 'paged', 1 );
+        return;
+    }
+
+    if ( is_home() ) {
+        $query->set( 'posts_per_page', 5 );
+        return;
+    }*/
+}
+add_action( 'pre_get_posts', 'set_post_query', 1 );
+

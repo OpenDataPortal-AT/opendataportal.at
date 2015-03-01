@@ -162,7 +162,7 @@ Template for Landing Page.
 		<?php $myQuery_News = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 3, 'orderby' => 'date', 'order' => 'DESC') );
 		while ( $myQuery_News->have_posts() ) : $myQuery_News->the_post(); { ?>
 			<div class="home-preview-news col-md-4" id="post-<?php echo $post->ID; ?>">
-				<?php get_template_part('templates/content', 'news-preview'); ?>
+				<?php get_template_part('templates/content', 'landingpage-news-preview'); ?>
 			</div>
 		<?php } endwhile; // end of the loop. ?>
 	</div>

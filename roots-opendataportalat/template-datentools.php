@@ -129,8 +129,8 @@ Template for Datentools overview page
 
 			<?php 
 			$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-			$args = array('post_type' => 'cpt_datentools', 'posts_per_page' => -1, 'paged' => $paged );
-			query_posts($args); 
+			$args = array('post_type' => 'cpt_datentools', 'posts_per_page' => 5, 'paged' => $paged );
+			$wp_query = new WP_Query( $args );
 			$num_posts = $wp_query->found_posts; ?>
 	   		
 			<span class="sentence-num-posts">
