@@ -630,19 +630,20 @@ function get_betriebssysteme_sidebar($taxonomy) {
 function get_websites_sidebar($typ) {
 	$pid = get_the_ID();
 
-	if($typ = 'tool' && get_post_meta($pid, $typ . '_website', single) && get_post_meta($pid, $typ . '_text_website', single)) {
-		echo '<a class="icon-link" href="' . get_post_meta($pid, 'tool_website', single) . '" title="' . get_post_meta($pid, $typ . '_text_website', single) . '">' . get_post_meta($pid, 'tool_text_website', single) . '</a><br>';		
+	if($typ == 'tool' && get_post_meta($pid, $typ . '_website', single) && get_post_meta($pid, $typ . '_text_website', single)) {
+		echo '<a class="icon-link" href="' . get_post_meta($pid, 'tool_website', single) . '" title="' . get_post_meta($pid, 'tool_text_website', single) . '">' . get_post_meta($pid, 'tool_text_website', single) . '</a><br>';		
 	}
-	if(get_post_meta($pid, $typ . '_website_1', single) && get_post_meta($pid, $typ . '_text_website_1', single) ) {
-		echo '<a class="icon-link" href="' . get_post_meta($pid, $typ . '_website_1', single) . '" title="' . get_post_meta($pid, $typ . '_text_website_1', single) . '">' . get_post_meta($pid, $typ . '_text_website_1', single) . '</a><br>';
-		
+	if ($typ == 'app') {
+		if( get_post_meta($pid, $typ . '_website_1', single) && get_post_meta($pid, $typ . '_text_website_1', single) ) {
+			echo '<a class="icon-link" href="' . get_post_meta($pid, $typ . '_website_1', single) . '" title="' . get_post_meta($pid, $typ . '_text_website_1', single) . '">' . get_post_meta($pid, $typ . '_text_website_1', single) . '</a><br>';
+		}
+		if( get_post_meta($pid, $typ . '_website_2', single) && get_post_meta($pid, $typ . '_text_website_2', single) ) {
+			echo '<a class="icon-link" href="' . get_post_meta($pid, $typ . '_website_2', single) . '" title="' . get_post_meta($pid, $typ . '_text_website_2', single) . '">' . get_post_meta($pid, $typ . '_text_website_2', single) . '</a><br>';	
+		}
+		if( get_post_meta($pid, $typ . '_website_3', single) && get_post_meta($pid, $typ . '_text_website_3', single) ) {
+			echo '<a class="icon-link" href="' . get_post_meta($pid, $typ . '_website_3', single) . '" title="' . get_post_meta($pid, $typ . '_text_website_3', single) . '">' . get_post_meta($pid, $typ . '_text_website_3', single) . '</a>';	
+		}	
 	}
-	if(get_post_meta($pid, $typ . '_website_2', single) && get_post_meta($pid, $typ . '_text_website_2', single) ) {
-		echo '<a class="icon-link" href="' . get_post_meta($pid, $typ . '_website_2', single) . '" title="' . get_post_meta($pid, $typ . '_text_website_2', single) . '">' . get_post_meta($pid, $typ . '_text_website_2', single) . '</a><br>';	
-	}
-	if(get_post_meta($pid, $typ . '_website_3', single) && get_post_meta($pid, $typ . '_text_website_3', single) ) {
-		echo '<a class="icon-link" href="' . get_post_meta($pid, $typ . '_website_3', single) . '" title="' . get_post_meta($pid, $typ . '_text_website_3', single) . '">' . get_post_meta($pid, $typ . '_text_website_3', single) . '</a>';	
-	}	
 }
 
 function get_website_organisation($taxonomy) {
@@ -652,6 +653,15 @@ function get_website_organisation($taxonomy) {
 	
 	if($url && $name) {
 		echo '<a class="icon-globe" href="' . $url . '" title="Website ' . $name . '">' . $name . '</a>';
+	}
+}
+
+function get_datasources_sidebar() {
+	$text = get_post_meta( get_the_ID(), 'app_verwendete_datensaetze', single);
+	$rows = explode("\n", $text);
+	foreach ($rows as $row) {
+		$row = explode(',', $row);
+		echo '<a href="' . $row[0] . '"" title="' . $row[1] . '">' . $row[1] . '</a><br>';
 	}
 }
 
@@ -1147,31 +1157,4 @@ function prefix_do_this_daily() {
 	update_post_meta($post->ID, 'lp_anzahl_datensets', $num_datasets);
 
 }
-
-function set_post_query( $query ) {
-	/*
-	// not an admin page and is the main query
-	if (!is_admin() && $query->is_main_query()){
-	    if ( is_page_template( 'template-anwendungen.php' ) ) {
-			//echo 'TEST';
-	        //$query->set( 'post_type', 'cpt_anwendungen' );
-	        //$query->set( 'posts_per_page', 2 );
-	        //$query->set( 'paged', 1 );
-	        return;
-	    }
-	}
-
-    if ( is_page('datentools') ) {
-        $query->set( 'posts_per_page', 5 );
-        $query->set( 'post_type', 'cpt_datentools' );
-        $query->set( 'paged', 1 );
-        return;
-    }
-
-    if ( is_home() ) {
-        $query->set( 'posts_per_page', 5 );
-        return;
-    }*/
-}
-add_action( 'pre_get_posts', 'set_post_query', 1 );
 

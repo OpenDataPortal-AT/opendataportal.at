@@ -48,7 +48,7 @@
 <h5 class="app_name_einreicherin">Ihr Name *</h5>
 [text* tool_name_einreicherin class:form-control class:size-medium]
 
-<h5 class="app_email_einreicherin">Ihre E-Mail-Adresse *</h5>
+<h5 class="app_email_einreicherin">Ihre E-Mail-Adresse * (Achtung: Die Email-Adresse wird auf ODP-AT veröffentlicht.)</h5>
 [email* tool_email_einreicherin class:form-control class:size-medium]
 
 <h5 class="app_website_einreicherin">Link zu Ihrer Website</h5>

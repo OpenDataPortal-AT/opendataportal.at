@@ -36,7 +36,7 @@
 </div>
 
 <div class="form-group row app_verwendete_datensaetze col-sm-8 ">
-<h5>Verwendete Datens&auml;tze *</h5>
+<h5>Verwendete Datens&auml;tze * (ein Datensatz pro Zeile. Zuerst URL, dann Bezeichnung des Datensatzes und beides getrennt durch ein Komma. zB.: http://orf.at, ORF)</h5>
      [textarea* app_verwendete_datensaetze class:form-control class:size-large]
 </div>
 
@@ -65,7 +65,7 @@
 <h5 class="app_name_einreicherin">Ihr Name *</h5>
 [text* app_name_einreicherin class:form-control class:size-medium]
 
-<h5 class="app_email_einreicherin">Ihre E-Mail-Adresse *</h5>
+<h5 class="app_email_einreicherin">Ihre E-Mail-Adresse * (Achtung: Die Email-Adresse wird auf ODP-AT veröffentlicht.)</h5>
 [email* app_email_einreicherin class:form-control class:size-medium]
 
 <h5 class="app_website_einreicherin">Link zu Ihrer Website</h5>
