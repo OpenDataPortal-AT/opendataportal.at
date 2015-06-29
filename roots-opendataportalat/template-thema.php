@@ -20,8 +20,55 @@ Template for Thema page
 	</div>	
 </div>
 
-
 <?php 
+// recent 5 datasets
+
+// get thema by wordpress page
+
+$ch = curl_init("https://data.opendataportal.at/api/3/action/package_search?rows=5&sort=metadata_modified%20desc%20&q=categorization:" . $thema);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
+curl_setopt($ch, CURLOPT_MAXREDIRS, 5);
+curl_setopt($ch, CURLOPT_AUTOREFERER, TRUE);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+curl_setopt($ch, CURLOPT_TIMEOUT, 45);
+curl_setopt($ch, CURLOPT_HEADER, FALSE);
+curl_setopt($ch, CURLINFO_HEADER_OUT, TRUE);
+curl_setopt($ch, CURLOPT_FILETIME, TRUE);
+
+$data = curl_exec($ch);
+curl_close($ch);
+
+$json = json_decode($data, $assoc = TRUE);
+
+//print_r($json["result"]["results"][0]);
+
+if(count($json["result"]["results"]) > 0) { ?>
+	<div class="wrapper-thema-datasets container-fluid row">
+		<div class="thema-datasets container">
+			<h3><a href="http://data.opendataportal.at/dataset?q=categorization:<?php echo $thema; ?>" title="Datasets">Datensätze zu diesem Thema</a></h3>
+
+			<table class="table-thema table table-striped">
+				<tr><th>Titel des Datensatzes (Datenherkunft)</th></tr>
+				<?php 
+				for($i=0; $i<count($json["result"]["results"]); $i++) { ?>
+					<tr><td>
+						<a href="http://data.opendataportal.at/dataset/<?php echo $json["result"]["results"][$i]["id"]; ?>" title="<?php echo $json["result"]["results"][$i]["title"]; ?>">
+							<?php echo $json["result"]["results"][$i]["title"]; ?>
+						</a>
+					</td></tr>
+				<?php } ?>
+			</table>
+		</div>
+	</div>
+<?php
+/*
+<?php } else { ?>
+	<div class="no-entries">Derzeit sind keine Einträge vorhanden</div>
+?>
+<?php } ?>
+*/
+
+
 // latest Highlight
 $myQuery_Highlight = new WP_Query( array( 'post_type' => 'cpt_highlights', 'tax_query' =>  array( array( 'taxonomy' => 'ct_themen', 'field' => 'slug', 'terms' => $thema ) ), 'posts_per_page' => 1, 'orderby' => 'date', 'order' => 'DESC') );
 if($myQuery_Highlight->found_posts >= 1) { ?>

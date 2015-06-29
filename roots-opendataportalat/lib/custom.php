@@ -490,7 +490,7 @@ function get_themen_preview( $name = false ) {
 				$thema_name = $thema->name;
 			}
 
-			echo '<a class="icon-thema" href="' . home_url() . '/' . $thema->slug . '" title="' . esc_attr($thema->name) . '"><img src="' . get_template_directory_uri() . '/assets/img/' . $thema->slug . '_small.png" alt="' . esc_attr($thema->name) . '">' . esc_attr($thema_name) . '</a>';
+			echo '<a class="icon-thema" href="' . home_url() . '/themen/' . $thema->slug . '" title="' . esc_attr($thema->name) . '"><img src="' . get_template_directory_uri() . '/assets/img/' . $thema->slug . '_small.png" alt="' . esc_attr($thema->name) . '">' . esc_attr($thema_name) . '</a>';
 		}
 	
 	}
@@ -508,7 +508,7 @@ function get_themen_preview_landingpage() {
 
 	if($themen_list) {
 		foreach ($themen_list as $thema) {
-			echo '<a class="icon-thema" href="' . home_url() . '/' . $thema->slug . '" title="' . $thema->name . '"><img src="' . get_template_directory_uri() . '/assets/img/' . $thema->slug . '_small.png" alt="' . $thema->name . '"></a>';
+			echo '<a class="icon-thema" href="' . home_url() . '/themen/' . $thema->slug . '" title="' . $thema->name . '"><img src="' . get_template_directory_uri() . '/assets/img/' . $thema->slug . '_small.png" alt="' . $thema->name . '"></a>';
 		}
 		echo "</span>&#44;&#32;";
 	}
