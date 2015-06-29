@@ -65,10 +65,11 @@ if(count($json["result"]["results"]) > 0) { ?>
 <?php } else { ?>
 	<div class="no-entries">Derzeit sind keine Einträge vorhanden</div>
 ?>
-<?php } ?>
 */
+} ?>
 
 
+<?php 
 // latest Highlight
 $myQuery_Highlight = new WP_Query( array( 'post_type' => 'cpt_highlights', 'tax_query' =>  array( array( 'taxonomy' => 'ct_themen', 'field' => 'slug', 'terms' => $thema ) ), 'posts_per_page' => 1, 'orderby' => 'date', 'order' => 'DESC') );
 if($myQuery_Highlight->found_posts >= 1) { ?>
