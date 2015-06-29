@@ -135,7 +135,7 @@ function cptui_register_my_cpt_datentools() {
 
 add_action('init', 'cptui_register_my_taxes_themen');
 function cptui_register_my_taxes_themen() {
-	register_taxonomy( 'themen',array (
+	register_taxonomy( 'ct_themen',array (
 		0 => 'post',
 		1 => 'page',
 		2 => 'cpt_anwendungen',
@@ -401,9 +401,9 @@ function get_newssource() {
 					$source = 'odp';
 					break;
 
-			case "http://data.gv.at":
+			case "https://www.data.gv.at":
 					$str = '<a href="http://data.gv.at" title="data.gv.at">data.gv.at</a>';
-					$source = 'okf';
+					$source = 'data-gv';
 					break;
 
 			case "https://www.open3.at":
@@ -441,9 +441,9 @@ function get_newssource_sidebar() {
 					$source = 'odp';
 					break;
 
-			case "http://data.gv.at":
+			case "https://data.gv.at":
 					$str = '<a href="http://data.gv.at" title="data.gv.at">data.gv.at</a>';
-					$source = 'okf';
+					$source = 'data-gv';
 					break;
 
 			case "https://www.open3.at":
@@ -468,7 +468,7 @@ function get_newssource_sidebar() {
 
 function get_themen_preview( $name = false ) {
 
-	$themen_list = wp_get_post_terms(get_the_ID(), 'themen', array("fields" => "all"));
+	$themen_list = wp_get_post_terms(get_the_ID(), 'ct_themen', array("fields" => "all"));
 	$thema_name = '';
 
 	if(count($themen_list) == 0 || $themen_list == NULL) {
@@ -504,7 +504,7 @@ function get_themen_preview( $name = false ) {
 
 function get_themen_preview_landingpage() {
 
-	$themen_list = wp_get_post_terms(get_the_ID(), 'themen', array("fields" => "all"));
+	$themen_list = wp_get_post_terms(get_the_ID(), 'ct_themen', array("fields" => "all"));
 
 	if($themen_list) {
 		foreach ($themen_list as $thema) {
@@ -661,7 +661,7 @@ function get_datasources_sidebar() {
 	$rows = explode("\n", $text);
 	foreach ($rows as $row) {
 		$row = explode(',', $row);
-		echo '<a href="' . $row[0] . '"" title="' . $row[1] . '">' . $row[1] . '</a><br>';
+		echo '<a href="' . trim($row[0]) . '"" title="' . trim($row[1]) . '">' . trim($row[1]) . '</a><br>';
 	}
 }
 

@@ -20,63 +20,15 @@ Template for Thema page
 	</div>	
 </div>
 
-<?php 
-// recent 5 datasets
-
-// get thema by wordpress page
-
-$ch = curl_init("https://data.opendataportal.at/api/3/action/package_search?rows=5&sort=metadata_modified%20desc%20&q=categorization:" . $thema);
-curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
-curl_setopt($ch, CURLOPT_MAXREDIRS, 5);
-curl_setopt($ch, CURLOPT_AUTOREFERER, TRUE);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-curl_setopt($ch, CURLOPT_TIMEOUT, 45);
-curl_setopt($ch, CURLOPT_HEADER, FALSE);
-curl_setopt($ch, CURLINFO_HEADER_OUT, TRUE);
-curl_setopt($ch, CURLOPT_FILETIME, TRUE);
-
-$data = curl_exec($ch);
-curl_close($ch);
-
-$json = json_decode($data, $assoc = TRUE);
-
-//print_r($json["result"]["results"][0]);
-
-if(count($json["result"]["results"]) > 0) { ?>
-	<div class="wrapper-thema-datasets container-fluid row">
-		<div class="thema-datasets container">
-			<h3><a href="http://data.opendataportal.at/dataset?q=categorization:<?php echo $thema; ?>" title="Datasets">Datensätze zu diesem Thema</a></h3>
-
-			<table class="table-thema table table-striped">
-				<tr><th>Titel des Datensatzes (Datenherkunft)</th></tr>
-				<?php 
-				for($i=0; $i<count($json["result"]["results"]); $i++) { ?>
-					<tr><td>
-						<a href="http://data.opendataportal.at/dataset/<?php echo $json["result"]["results"][$i]["id"]; ?>" title="<?php echo $json["result"]["results"][$i]["title"]; ?>">
-							<?php echo $json["result"]["results"][$i]["title"]; ?>
-						</a>
-					</td></tr>
-				<?php } ?>
-			</table>
-		</div>
-	</div>
-<?php
-/*
-<?php } else { ?>
-	<div class="no-entries">Derzeit sind keine Einträge vorhanden</div>
-
-*/
-?>
-
-<?php } ?>
 
 <?php 
 // latest Highlight
-$myQuery_Highlight = new WP_Query( array( 'post_type' => 'cpt_highlights', 'tax_query' =>  array( array( 'taxonomy' => 'themen', 'field' => 'slug', 'terms' => $thema ) ), 'posts_per_page' => 1, 'orderby' => 'date', 'order' => 'DESC') );
+$myQuery_Highlight = new WP_Query( array( 'post_type' => 'cpt_highlights', 'tax_query' =>  array( array( 'taxonomy' => 'ct_themen', 'field' => 'slug', 'terms' => $thema ) ), 'posts_per_page' => 1, 'orderby' => 'date', 'order' => 'DESC') );
 if($myQuery_Highlight->found_posts >= 1) { ?>
+	more
 	<div class="wrapper-thema-highlight container-fluid row">
 		<div class="thema-highlight container">
-			<h3 class="text-center"><a href="<?php echo home_url() ?>/highlights/?taxonomy&themen=<?php echo $thema; ?>" title="Highlight">Highlights</a></h3>
+			<h3 class="text-center"><a href="<?php echo home_url() ?>/highlights/?taxonomy&ct_themen=<?php echo $thema; ?>" title="Highlight">Highlights</a></h3>
 			<?php while ( $myQuery_Highlight->have_posts() ) : $myQuery_Highlight->the_post(); { ?>
 				<?php get_template_part('templates/content', 'highlight-preview'); ?>
 				<?php } endwhile; // end of the loop. 
@@ -87,25 +39,25 @@ if($myQuery_Highlight->found_posts >= 1) { ?>
 
 <?php 
 // recent three News
-$myQuery_News = new WP_Query( array( 'post_type' => 'post', 'tax_query' =>  array( array( 'taxonomy' => 'themen', 'field' => 'slug', 'terms' => $thema ) ), 'posts_per_page' => 3, 'orderby' => 'date', 'order' => 'DESC') );
+$myQuery_News = new WP_Query( array( 'post_type' => 'post', 'tax_query' =>  array( array( 'taxonomy' => 'ct_themen', 'field' => 'slug', 'terms' => $thema ) ), 'posts_per_page' => 3, 'orderby' => 'date', 'order' => 'DESC') );
 if($myQuery_News->found_posts >= 1) { ?>
 	<div class="wrapper-thema-news container-fluid row"> 
 		<div class="thema-news container"> 	
 			<h3>News zu diesem Thema</h3>	
 			<?php while ( $myQuery_News->have_posts() ) : $myQuery_News->the_post(); { ?>
 				<div class="thema-preview-news col-md-12" id="post-<?php echo $post->ID; ?>">
-					<?php get_template_part('templates/content', 'news'); ?>
+					<?php get_template_part('templates/content', 'news-preview'); ?>
 				</div>	
 			<?php } endwhile; // end of the loop. 
 			wp_reset_postdata(); ?>
-			<a href="<?php echo home_url() ?>/news/?taxonomy&themen=<?php echo $thema; ?>" title="News"><button class="btn btn-primary">mehr anzeigen</button></a>
+			<a href="<?php echo home_url() ?>/news/?taxonomy&ct_themen=<?php echo $thema; ?>" title="News"><button class="btn btn-primary">mehr anzeigen</button></a>
 		</div>	
 	</div>
 <?php } ?>
 
 <?php 
 // recent three applications
-$myQuery_Anwendungen = new WP_Query( array( 'post_type' => 'cpt_anwendungen', 'tax_query' =>  array( array( 'taxonomy' => 'themen', 'field' => 'slug', 'terms' => $thema ) ), 'posts_per_page' => 3, 'orderby' => 'date', 'order' => 'DESC') );
+$myQuery_Anwendungen = new WP_Query( array( 'post_type' => 'cpt_anwendungen', 'tax_query' =>  array( array( 'taxonomy' => 'ct_themen', 'field' => 'slug', 'terms' => $thema ) ), 'posts_per_page' => 3, 'orderby' => 'date', 'order' => 'DESC') );
 if($myQuery_Anwendungen->found_posts >= 1) { ?>
 	<div class="wrapper-thema-anwendungen container-fluid row"> 
 		<div class="wrapper-thema-anwendungen container"> 
@@ -116,7 +68,7 @@ if($myQuery_Anwendungen->found_posts >= 1) { ?>
 				</div>		
 			<?php } endwhile; // end of the loop. 
 			wp_reset_postdata(); ?>
-			<a href="<?php echo home_url() ?>/anwendungen/?taxonomy&themen=<?php echo $thema; ?>" title="Anwendungen"><button class="btn btn-primary">mehr anzeigen</button></a>
+			<a href="<?php echo home_url() ?>/anwendungen/?taxonomy&ct_themen=<?php echo $thema; ?>" title="Anwendungen"><button class="btn btn-primary">mehr anzeigen</button></a>
 		</div>	
 	</div>	
 <?php } ?>
@@ -127,59 +79,3 @@ if($myQuery_Anwendungen->found_posts >= 1) { ?>
 	</div>
 </div>
 
-<script>
-
-/*
-deactivate this, cause of cross domain request problems.
-
-window.addEventListener("load", start, false);
-
-function start() {
-
-
-	var table = document.getElementById('thema-table');
-
-	// get thema via data attribute
-	var tableThema = $( ".table-thema" );
-	thema = tableThema.data("thema");
-	//var thema = "verwaltung-und-politik";
-
-	// create api call
-	var url = "https://data.opendataportal.at/api/3/action/package_search?rows=10&sort=metadata_modified%20desc%20&q=categorization:" + thema;
-
-	// access ckan api
-	var request = new XMLHttpRequest();
-	request.open("GET", url, false);
-	request.send();
-  
-  // check api call for errors
-	if (request.status === 200)
-	{
-		// fetch result
-		var data = JSON.parse(request.responseText);
-		var listResults = data.result.results;
-		var numResults = listResults.length;
-
-		// check if there are any results
-		if ( numResults === 0 ) {
-			// output no results
-		}
-		if( numResults > 0 ) {
-			for ( var i = 0; i < numResults; i++ ) {
-				//table.append( '<tr><a href="' + ' title="">Titel</a></tr>' );
-
-				// Create an empty <tr> element and add it to the 1st position of the table:
-				var row = table.insertRow(i);
-
-				// Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
-				var cell = row.insertCell(0);
-
-				// Add some text to the new cells:
-				cell.innerHTML = '<tr><a href="http://data.opendataportal.at/dataset/' + listResults[i].id + '" title="' + listResults[i].name + '">' + listResults[i].name + '</a></tr>';
-			}
-		}
-	}
-}
-*/
-
-</script>

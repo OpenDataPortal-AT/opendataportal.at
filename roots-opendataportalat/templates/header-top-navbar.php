@@ -17,7 +17,7 @@ Header
 									<span class="icon-bar"></span>
 								</button>
 								<a href="<?php echo home_url(); ?>/" alt="OpenDataPortal Österreich"><h1 class="navbar-brand"><?php bloginfo('name'); ?></h1></a>
-								<a href="<?php echo home_url(); ?>/" alt="Beta"><img class="logo-beta" src="<?php echo get_template_directory_uri() ?>/assets/img/beta.png"></a><br>
+								<a href="<?php echo home_url(); ?>/kontakt" alt="Beta"><img class="logo-beta" src="<?php echo get_template_directory_uri() ?>/assets/img/beta.png"></a><br>
 								<span class="tagline"><i>All you can <span class="tagline-data">Data</i></span></span>
 						</div>
 	

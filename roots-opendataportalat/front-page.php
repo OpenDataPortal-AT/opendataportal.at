@@ -9,11 +9,13 @@ Template for Landing Page.
 <div class="wrapper-home-highlight container-fluid row">
 	<div class="home-highlight container">
 		<a href="<?php echo home_url(); ?>/highlights" title="Alle Highlights"><h3 class="text-center"><button class="btn btn-primary button-alle-highlights">Alle Highlights</buttton></h3></a>
-		<?php $myQuery_Highlight = new WP_Query( array( 'post_type' => 'cpt_highlights', 'posts_per_page' => 1, 'orderby' => 'date', 'order' => 'DESC') );
-		while ( $myQuery_Highlight->have_posts() ) : $myQuery_Highlight->the_post(); { ?>
-			<?php get_template_part('templates/content', 'highlight-preview'); ?>
-		<?php } endwhile; // end of the loop. 
-		wp_reset_postdata(); ?>
+		<div class="row">
+			<?php $myQuery_Highlight = new WP_Query( array( 'post_type' => 'cpt_highlights', 'posts_per_page' => 1, 'orderby' => 'date', 'order' => 'DESC') );
+			while ( $myQuery_Highlight->have_posts() ) : $myQuery_Highlight->the_post(); { ?>
+				<?php get_template_part('templates/content', 'highlight-preview'); ?>
+			<?php } endwhile; // end of the loop. 
+			wp_reset_postdata(); ?>
+		</div>
 	</div>
 </div>
 
@@ -24,13 +26,13 @@ Template for Landing Page.
 		<h3>Wie kann ich mitmachen?</h3>
 		<p class="text-mitmachen"><?php echo get_post_meta($post->ID, 'lp_mitmachen', single); ?></p>
 		<div class="home-mitmachen-buttons">
-			<a href="http://data.opendataportal.at/user/login" title="Daten einstellen">
+			<a href="http://data.opendataportal.at/user/login" title="Daten einstellen" class="col-md-4">
 				<button type="button" class="btn btn-primary button-daten-einstellen"><span class="icon-daten-einstellen">Daten einstellen</span></button>
 			</a>
-			<a href="<?php echo home_url(); ?>/anwendung-einreichen" title="Anwendung einreichen">
+			<a href="<?php echo home_url(); ?>/anwendung-einreichen" title="Anwendung einreichen" class="col-md-4">
 				<button type="button" class="btn btn-primary button-anwendung-einreichen"><span class="icon-anwendung-einreichen">Anwendung einreichen</span></button>
 			</a>
-			<a href="https://intern.opendataportal.at/lists/listinfo/discuss" title="Mailingliste">
+			<a href="https://intern.opendataportal.at/lists/listinfo/discuss" title="Mailingliste" class="col-md-4">
 				<button type="button" class="btn btn-primary button-mailingliste"><span class="icon-mailingliste">Mailingliste</span></button>
 			</a>
 		</div>
@@ -41,23 +43,25 @@ Template for Landing Page.
 
 <div class="wrapper-home-content container-fluid row">
 	<div class="home-content container">
-		<div class="home-datenkatalog text-center col-sm-4">
-			<a class="logos" href="http://data.opendataportal.at" title="Datenkatalog OpenDataPortal Austria"></a>
-			<h4>Datenkatalog</h4>
-			<p><?php echo get_post_meta($post->ID, 'lp_datenkatalog', single); ?></p>
-			<a href="https://data.opendataportal.at" title="Datenkatalog" class="weiterlesen">weiterlesen</a>
-		</div>
-		<div class="home-anwendungen text-center col-sm-4">
-			<a class="logos" href="<?php echo home_url() ?>/anwendungen" title="Anwendungen"></a>
-			<h4>Anwendungen</h4>
-			<p><?php echo get_post_meta($post->ID, 'lp_anwendungen', single); ?></p>
-			<a href="<?php echo home_url() ?>/anwendungen" title="Anwendungen" class="weiterlesen">weiterlesen</a>
-		</div>
-		<div class="home-ueber-odp text-center col-sm-4">
-			<a class="logos" href="<?php echo home_url() ?>/ueber-odp" title="Über OpenDataPortal AT"></a>
-			<h4>&#220;ber ODP</h4>
-			<p><?php echo get_post_meta($post->ID, 'lp_ueber-odp', single); ?></p>
-			<a href="<?php echo home_url() ?>/ueber-odp" title="&#220;ber ODP" class="weiterlesen">weiterlesen</a>
+		<div class="row">
+			<div class="home-datenkatalog text-center col-md-4">
+				<a class="logos" href="http://data.opendataportal.at" title="Datenkatalog OpenDataPortal Austria"></a>
+				<h4>Datenkatalog</h4>
+				<p><?php echo get_post_meta($post->ID, 'lp_datenkatalog', single); ?></p>
+				<a href="https://data.opendataportal.at" title="Datenkatalog" class="weiterlesen">weiterlesen</a>
+			</div>
+			<div class="home-anwendungen text-center col-md-4">
+				<a class="logos" href="<?php echo home_url() ?>/anwendungen" title="Anwendungen"></a>
+				<h4>Anwendungen</h4>
+				<p><?php echo get_post_meta($post->ID, 'lp_anwendungen', single); ?></p>
+				<a href="<?php echo home_url() ?>/anwendungen" title="Anwendungen" class="weiterlesen">weiterlesen</a>
+			</div>
+			<div class="home-ueber-odp text-center col-md-4">
+				<a class="logos" href="<?php echo home_url() ?>/ueber-odp" title="Über OpenDataPortal AT"></a>
+				<h4>&#220;ber ODP</h4>
+				<p><?php echo get_post_meta($post->ID, 'lp_ueber-odp', single); ?></p>
+				<a href="<?php echo home_url() ?>/ueber-odp" title="&#220;ber ODP" class="weiterlesen">weiterlesen</a>
+			</div>
 		</div>
 	</div>
 </div>
