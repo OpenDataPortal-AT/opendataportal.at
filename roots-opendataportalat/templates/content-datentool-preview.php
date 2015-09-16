@@ -4,8 +4,7 @@ Preview of applications rendered in template-anwendungen.php and template-thema.
 */
 ?>
 
-<div class="datentool-preview" id="post-<?php echo $post->ID; ?>">
-
+<div class="datentool-preview row" id="post-<?php echo $post->ID; ?>">
 	<?php if ( has_post_thumbnail() ) { ?>
 		<div class="col-md-4 datentool-thumb">
 			<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>

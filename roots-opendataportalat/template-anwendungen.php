@@ -161,9 +161,7 @@ http://codex.wordpress.org/Post_Types
 			</span>
 
 			<?php if ( $wp_query->have_posts() ) : while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
-		        	<div class="anwendungen-preview row" id="post-<?php echo $post->ID; ?>">
-	          			<?php get_template_part('templates/content', 'anwendung-preview'); ?>
-	        		</div>
+	          		<?php get_template_part('templates/content', 'anwendung-preview'); ?>
 	      		<?php endwhile; // end of the loop. 
 			
 			endif;

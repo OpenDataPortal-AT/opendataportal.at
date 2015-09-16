@@ -147,10 +147,7 @@ Template for Datentools overview page
 			</span>
 			
 			<?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
-
-			        <div class="datentools-preview row" id="post-<?php echo $post->ID; ?>">
-	       				<?php get_template_part('templates/content', 'datentool-preview'); ?>
-	       			</div>
+      				<?php get_template_part('templates/content', 'datentool-preview'); ?>
 	      		<?php endwhile; // end of the loop. 
       		endif; 
 			wp_reset_postdata();
