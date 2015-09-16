@@ -472,27 +472,20 @@ function get_themen_preview( $name = false ) {
 	$thema_name = '';
 
 	if(count($themen_list) == 0 || $themen_list == NULL) {
-		
 		echo '<span class="text-bold">Kein Thema</span>';
-
 	} else {
-		
 		if(count($themen_list) == 1) {
 			echo '<span class="text-bold">Thema: </span>';	
 		}
 		if(count($themen_list) > 1) {
 			echo '<span class="text-bold">Themen: </span>';
 		}
-		
 		foreach ($themen_list as $thema) {
-			
 			if( $name ) {
 				$thema_name = $thema->name;
 			}
-
 			echo '<a class="icon-thema" href="' . home_url() . '/themen/' . $thema->slug . '" title="' . esc_attr($thema->name) . '"><img src="' . get_template_directory_uri() . '/assets/img/' . $thema->slug . '_small.png" alt="' . esc_attr($thema->name) . '">' . esc_attr($thema_name) . '</a>';
 		}
-	
 	}
 }
 
@@ -541,7 +534,7 @@ function print_tags() {
 
 function get_themen_sidebar() {
 
-	$themen_list = wp_get_post_terms(get_the_ID(), 'themen', array("fields" => "all"));
+	$themen_list = wp_get_post_terms(get_the_ID(), 'ct_themen', array("fields" => "all"));
 
 	if(count($themen_list) == 0 || $themen_list == NULL) {
 		

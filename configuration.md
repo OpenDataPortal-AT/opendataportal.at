@@ -134,4 +134,5 @@ Configuration of the wordpress installation and all used plugins.
 - Match inline tags: unselect all
 - Unmatched inline tags: Don't create any matching terms
 
-
+### Advanced Custom Fields
+- Posts: Exclude categories
