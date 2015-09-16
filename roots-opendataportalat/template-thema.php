@@ -111,9 +111,7 @@ if($myQuery_Anwendungen->found_posts >= 1) { ?>
 		<div class="wrapper-thema-anwendungen container"> 
 			<h3>Anwendungen zu diesem Thema</h3>
 			<?php while ( $myQuery_Anwendungen->have_posts() ) : $myQuery_Anwendungen->the_post(); { ?>	
-				<div class="anwendung-preview col-md-12 row" id="post-<?php echo $post->ID; ?>">
-					<?php get_template_part('templates/content', 'anwendung-preview'); ?>
-				</div>		
+				<?php get_template_part('templates/content', 'anwendung-preview'); ?>
 			<?php } endwhile; // end of the loop. 
 			wp_reset_postdata(); ?>
 			<a href="<?php echo home_url() ?>/anwendungen/?taxonomy&ct_themen=<?php echo $thema; ?>" title="Anwendungen"><button class="btn btn-primary">mehr anzeigen</button></a>
