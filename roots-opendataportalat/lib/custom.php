@@ -681,6 +681,18 @@ function get_tags_sidebar() {
 	}
 }
 
+function get_cats_sidebar() {
+	$cats = get_categories();
+
+	if($cats) {
+		foreach ($cats as $cat) {
+		echo '<a href="' . get_category_link($cat->term_id) . '" title="' . $cat->name . '"><button class="btn-tags btn">' . $cat->name . '</button></a>';
+		}
+	} else {
+		echo '<span class="no-tags">Keine Tags</span>';
+	}
+}
+
 /**
  * Create anwendungen post from anwendungen submission formular before sending mail 
  */

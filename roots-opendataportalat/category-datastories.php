@@ -21,7 +21,7 @@ if(is_search()) {
 		$pid = null;
 	} ?>
 
-	<div class="news-list col-md-12" data-searchfilters="<?php echo get_post_meta($pid, 'news_searchfilters', single); ?>" data-textsearch="<?php echo get_post_meta($pid, 'news_textsearch', single); ?>">
+	<div class="news-list col-md-12" style="padding: 28px;" data-searchfilters="<?php echo get_post_meta($pid, 'news_searchfilters', single); ?>" data-textsearch="<?php echo get_post_meta($pid, 'news_textsearch', single); ?>">
 		<div class="container">
 	  
 			<div class="news-sidebar filter-sidebar col-md-3" style="float:left;">
@@ -140,7 +140,7 @@ if(is_search()) {
 		    <div class="news-results filter-results col-md-9" style="float:right;">
 	    		<?php 
 	      		$num_posts = wp_count_posts(); ?>
-	      		<div class="sentence-num-posts"><span class="num-posts"><?php echo $num_posts->publish; ?></span> News-Artikel gefunden <a href="<?php echo home_url(); ?>/category/datastories/" title="Data Stories"><button class="btn btn-primary button-alle-highlights" style="float:right;">Data Stories</buttton></div>
+	      		<div class="sentence-num-posts"><span class="num-posts"><?php $cat = get_the_category(); $cat = $cat[0]; echo $cat->category_count; ?></span> Data Stories gefunden <a href="<?php echo home_url(); ?>/news" title="News"><button class="btn btn-primary button-alle-highlights" style="float:right;">News</buttton></div>
 		      		<?php 
 		      		$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 

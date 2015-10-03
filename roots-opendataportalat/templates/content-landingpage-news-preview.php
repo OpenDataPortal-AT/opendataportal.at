@@ -26,6 +26,9 @@ Preview of news rendered in index.php, front-page.php and template-thema.php.
 				<img src="<?php echo get_template_directory_uri() . '/assets/img/comment.png'; ?>"><span class="num-comments"><?php echo comments_number( 'Keine Kommentare', '1 Kommentar', '% Kommentare' ); ?><span>
 			</span>
 		<?php } ?>
+		<?php if(in_category('datastories')) {
+			echo '<a href="'. home_url() . '/category/datastories/" title="Data Stories"><button class="btn-tags btn" style="float: right; background-color: #8CC63F; font-family: open-sans-semibold; font-size: 12px; color: white; border-radius: 15px; margin: 2px 5px 2px 0; padding: 2px 10px;">Data Story</button></a>';
+		} ?>
 
 	</div>
 </div>

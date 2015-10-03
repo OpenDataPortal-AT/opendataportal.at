@@ -9,7 +9,10 @@ Default template for single view a post.
 	<article <?php post_class(); ?>>
 			
 		<header class="col-md-offset-3">
-			<h1 class="entry-title"><?php the_title(); ?></h1>
+			<h1 class="entry-title"><?php the_title(); ?> <?php if(in_category('datastories')) {
+				echo '<a href="'. home_url() . '/category/datastories/" title="Data Stories"><button class="btn btn-primary button-alle-highlights" style="float: right;">Data Story</button></a>';
+		} ?>
+</h1>
 			<?php get_template_part('templates/entry-meta'); ?>
 		</header>
 
@@ -28,7 +31,7 @@ Default template for single view a post.
 
 				<div class="sidebar-tags">
 					<h2>Schlagwörter</h2>
-					<?php get_tags_sidebar(); ?>
+					<?php get_tags_sidebar(); get_cats_sidebar(); ?>
 				</div>
 
 			</div>
