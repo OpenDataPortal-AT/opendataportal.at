@@ -681,12 +681,12 @@ function get_tags_sidebar() {
 	}
 }
 
-function get_cats_sidebar() {
-	$cats = get_categories();
+function get_cats_sidebar($postID) {
+	$cats = wp_get_post_categories($postID);
 
 	if($cats) {
 		foreach ($cats as $cat) {
-		echo '<a href="' . get_category_link($cat->term_id) . '" title="' . $cat->name . '"><button class="btn-tags btn">' . $cat->name . '</button></a>';
+		echo '<a href="' . get_category_link($cat) . '" title="' . get_cat_name($cat) . '"><button class="btn-tags btn">' . get_cat_name($cat) . '</button></a>';
 		}
 	} else {
 		echo '<span class="no-tags">Keine Tags</span>';

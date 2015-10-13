@@ -31,7 +31,8 @@ Default template for single view a post.
 
 				<div class="sidebar-tags">
 					<h2>Schlagwörter</h2>
-					<?php get_tags_sidebar(); get_cats_sidebar(); ?>
+					<?php get_tags_sidebar(); 
+					get_cats_sidebar($post->ID); ?>
 				</div>
 
 			</div>
