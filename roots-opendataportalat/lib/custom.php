@@ -676,8 +676,6 @@ function get_tags_sidebar() {
 		foreach ($tags as $tag) {
 		echo '<a href="' . get_tag_link($tag->term_id) . '" title="' . $tag->name . '"><button class="btn-tags btn">' . $tag->name . '</button></a>';
 		}
-	} else {
-		echo '<span class="no-tags">Keine Tags</span>';
 	}
 }
 
@@ -688,8 +686,6 @@ function get_cats_sidebar($postID) {
 		foreach ($cats as $cat) {
 		echo '<a href="' . get_category_link($cat) . '" title="' . get_cat_name($cat) . '"><button class="btn-tags btn">' . get_cat_name($cat) . '</button></a>';
 		}
-	} else {
-		echo '<span class="no-tags">Keine Tags</span>';
 	}
 }
 
