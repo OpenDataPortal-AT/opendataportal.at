@@ -42,8 +42,8 @@ function cptui_register_my_cpt_highlights() {
 				'not_found_in_trash' => 'Keine Highlights im Papierkorb gefunden',
 				'parent' => 'Eltern Highlight',
 			)
-		) 
-	); 
+		)
+	);
 }
 
 
@@ -83,8 +83,8 @@ function cptui_register_my_cpt_anwendungen() {
 				'not_found_in_trash' => 'Keine Anwendungen im Papierkorb gefunden',
 				'parent' => 'Eltern Anwendung',
 			)
-		) 
-	); 
+		)
+	);
 }
 
 
@@ -123,8 +123,8 @@ function cptui_register_my_cpt_datentools() {
 				'not_found_in_trash' => 'Keine Datentools im Papierkorb gefunden',
 				'parent' => 'Eltern Datentool',
 			)
-		) 
-	); 
+		)
+	);
 }
 
 
@@ -161,8 +161,8 @@ function cptui_register_my_taxes_themen() {
 			'add_or_remove_items' => '',
 			'choose_from_most_used' => '',
 			)
-		) 
-	); 
+		)
+	);
 }
 
 
@@ -197,8 +197,8 @@ function cptui_register_my_taxes_app_betriebssysteme() {
 	  		'add_or_remove_items' => '',
 	  		'choose_from_most_used' => '',
 			)
-		) 
-	); 
+		)
+	);
 }
 
 
@@ -233,8 +233,8 @@ function cptui_register_my_taxes_tools_betriebssysteme() {
 	  		'add_or_remove_items' => '',
 	  		'choose_from_most_used' => '',
 			)
-		) 
-	); 
+		)
+	);
 }
 
 
@@ -269,8 +269,8 @@ function cptui_register_my_taxes_app_typ() {
   			'add_or_remove_items' => '',
   			'choose_from_most_used' => '',
 			)
-		) 
-	); 
+		)
+	);
 }
 
 
@@ -305,8 +305,8 @@ function cptui_register_my_taxes_tools_typ() {
   			'add_or_remove_items' => '',
   			'choose_from_most_used' => '',
 			)
-		) 
-	); 
+		)
+	);
 }
 
 
@@ -341,8 +341,8 @@ function cptui_register_my_taxes_tools_funktionen() {
 	  		'add_or_remove_items' => '',
 	  		'choose_from_most_used' => '',
 			)
-		) 
-	); 
+		)
+	);
 }
 
 
@@ -375,8 +375,8 @@ function cptui_register_my_taxes_quelle() {
   		'add_or_remove_items' => '',
   		'choose_from_most_used' => '',
 		)
-	) 
-); 
+	)
+);
 }
 
 
@@ -387,7 +387,7 @@ function cptui_register_my_taxes_quelle() {
 
 function get_newssource() {
 
-	$feed = get_post_meta(get_the_ID(), 'syndication_source_uri', single); 
+	$feed = get_post_meta(get_the_ID(), 'syndication_source_uri', single);
 
 	switch ($feed) {
 
@@ -427,7 +427,7 @@ function get_newssource() {
 
 function get_newssource_sidebar() {
 
-	$feed = get_post_meta(get_the_ID(), 'syndication_source_uri', single); 
+	$feed = get_post_meta(get_the_ID(), 'syndication_source_uri', single);
 
 	switch ($feed) {
 
@@ -475,7 +475,7 @@ function get_themen_preview( $name = false ) {
 		echo '<span class="text-bold">Kein Thema</span>';
 	} else {
 		if(count($themen_list) == 1) {
-			echo '<span class="text-bold">Thema: </span>';	
+			echo '<span class="text-bold">Thema: </span>';
 		}
 		if(count($themen_list) > 1) {
 			echo '<span class="text-bold">Themen: </span>';
@@ -537,16 +537,16 @@ function get_themen_sidebar() {
 	$themen_list = wp_get_post_terms(get_the_ID(), 'ct_themen', array("fields" => "all"));
 
 	if(count($themen_list) == 0 || $themen_list == NULL) {
-		
+
 		echo 'Kein Thema';
 
 	} else {
-	
+
 		foreach ($themen_list as $thema) {
-			
+
 			echo '<span><a class="icon-thema" href="' . home_url() . '/' . $thema->slug . '" title="' . esc_attr($thema->name) . '"><img src="' . get_template_directory_uri() . '/assets/img/' . $thema->slug . '_small.png" alt="' . esc_attr($thema->name) . '">' . esc_attr($thema->name) . '</a></span><br>';
 		}
-	
+
 	}
 }
 
@@ -561,15 +561,15 @@ function get_typ_sidebar($taxonomy) {
 	$typ_list = wp_get_post_terms(get_the_ID(), $taxonomy, array("fields" => "all"));
 
 	if(count($typ_list) == 0 || $typ_list == NULL) {
-		
+
 		echo 'Kein Typ';
 
 	} else {
-	
+
 		foreach ($typ_list as $typ) {
 			echo '<span class="typ-' . $typ->slug . '">' . esc_attr($typ->name) . '</span><br>';
 		}
-	
+
 	}
 }
 
@@ -583,11 +583,11 @@ function get_betriebssysteme_preview($taxonomy) {
 	$os_list = wp_get_post_terms(get_the_ID(), $taxonomy, array("fields" => "all"));
 
 	if(count($os_list) == 0 || $os_list == NULL) {
-		
+
 		echo '<p><i>Kein Thema</i></p>';
 
 	} else {
-	
+
 		foreach ($os_list as $os) {
 			echo '<p class="icon-betriebssystem icon-' . esc_attr($os->slug) . '"></p>';
 		}
@@ -604,7 +604,7 @@ function get_betriebssysteme_sidebar($taxonomy) {
 	$os_list = wp_get_post_terms(get_the_ID(), $taxonomy, array("fields" => "all"));
 
 	if(count($os_list) == 0 || $os_list == NULL) {
-		
+
 		echo '<span><i>Kein Thema</i></span>';
 
 	} else {
@@ -624,18 +624,18 @@ function get_websites_sidebar($typ) {
 	$pid = get_the_ID();
 
 	if($typ == 'tool' && get_post_meta($pid, $typ . '_website', single) && get_post_meta($pid, $typ . '_text_website', single)) {
-		echo '<a class="icon-link" href="' . get_post_meta($pid, 'tool_website', single) . '" title="' . get_post_meta($pid, 'tool_text_website', single) . '">' . get_post_meta($pid, 'tool_text_website', single) . '</a><br>';		
+		echo '<a class="icon-link" href="' . get_post_meta($pid, 'tool_website', single) . '" title="' . get_post_meta($pid, 'tool_text_website', single) . '">' . get_post_meta($pid, 'tool_text_website', single) . '</a><br>';
 	}
 	if ($typ == 'app') {
 		if( get_post_meta($pid, $typ . '_website_1', single) && get_post_meta($pid, $typ . '_text_website_1', single) ) {
 			echo '<a class="icon-link" href="' . get_post_meta($pid, $typ . '_website_1', single) . '" title="' . get_post_meta($pid, $typ . '_text_website_1', single) . '">' . get_post_meta($pid, $typ . '_text_website_1', single) . '</a><br>';
 		}
 		if( get_post_meta($pid, $typ . '_website_2', single) && get_post_meta($pid, $typ . '_text_website_2', single) ) {
-			echo '<a class="icon-link" href="' . get_post_meta($pid, $typ . '_website_2', single) . '" title="' . get_post_meta($pid, $typ . '_text_website_2', single) . '">' . get_post_meta($pid, $typ . '_text_website_2', single) . '</a><br>';	
+			echo '<a class="icon-link" href="' . get_post_meta($pid, $typ . '_website_2', single) . '" title="' . get_post_meta($pid, $typ . '_text_website_2', single) . '">' . get_post_meta($pid, $typ . '_text_website_2', single) . '</a><br>';
 		}
 		if( get_post_meta($pid, $typ . '_website_3', single) && get_post_meta($pid, $typ . '_text_website_3', single) ) {
-			echo '<a class="icon-link" href="' . get_post_meta($pid, $typ . '_website_3', single) . '" title="' . get_post_meta($pid, $typ . '_text_website_3', single) . '">' . get_post_meta($pid, $typ . '_text_website_3', single) . '</a>';	
-		}	
+			echo '<a class="icon-link" href="' . get_post_meta($pid, $typ . '_website_3', single) . '" title="' . get_post_meta($pid, $typ . '_text_website_3', single) . '">' . get_post_meta($pid, $typ . '_text_website_3', single) . '</a>';
+		}
 	}
 }
 
@@ -643,7 +643,7 @@ function get_website_organisation($taxonomy) {
 
 	$url = get_post_meta( get_the_ID(), $taxonomy . '_website_organisation', single);
 	$name = get_post_meta( get_the_ID(), $taxonomy . '_name_organisation', single);
-	
+
 	if($url && $name) {
 		echo '<a class="icon-globe" href="' . $url . '" title="Website ' . $name . '">' . $name . '</a>';
 	}
@@ -661,12 +661,12 @@ function get_datasources_sidebar() {
 function get_name_submitter($taxonomy) {
 	$name = get_post_meta( get_the_ID(), $taxonomy . '_name_einreicherin', single);
 	$website = get_post_meta( get_the_ID(), $taxonomy . '_website_einreicherin', single);
-	
+
 	if($website) {
 		echo '<a class="name-submitter" href="' . $website . '" title="Website ' . $name . '">' . $name . '</a><br>';
 	} else {
 		echo '<span>' . $name . '</span>';
-	}	
+	}
 }
 
 function get_tags_sidebar() {
@@ -690,7 +690,7 @@ function get_cats_sidebar($postID) {
 }
 
 /**
- * Create anwendungen post from anwendungen submission formular before sending mail 
+ * Create anwendungen post from anwendungen submission formular before sending mail
  */
 
 
@@ -706,7 +706,7 @@ function wpcf7_create_anwendung(&$wpcf7_data) {
 		$new_post = array(
 			'post_title'  => $wpcf7_data->posted_data['app_name'],
 			'post_content'  => $wpcf7_data->posted_data['app_beschreibung'],
-			'post_status' =>  'pending',          
+			'post_status' =>  'pending',
 			'post_type' =>  'cpt_anwendungen'
 		);
 
@@ -717,31 +717,31 @@ function wpcf7_create_anwendung(&$wpcf7_data) {
 		$list_themen = $wpcf7_data->posted_data['app_themen'];
 		wp_set_post_terms( $pid, $list_themen, 'themen' );
 
-		// save taxonomy betriebssysteme 
+		// save taxonomy betriebssysteme
 		$list_os = $wpcf7_data->posted_data['app_betriebssysteme'];
 		wp_set_post_terms( $pid, $list_os, 'app_betriebssysteme' );
 
-		// save taxonomy typ 
+		// save taxonomy typ
 		$list_art = $wpcf7_data->posted_data['app_typ'];
 		wp_set_post_terms( $pid, $list_art, 'app_typ' );
 
 		// add custon fields from form
 		add_post_meta($pid, 'app_name', $wpcf7_data->posted_data['app_name']);
 		add_post_meta($pid, 'app_beschreibung', $wpcf7_data->posted_data['app_beschreibung']);
-		add_post_meta($pid, 'app_verwendete_datensaetze', $wpcf7_data->posted_data['app_verwendete_datensaetze']); 
-		add_post_meta($pid, 'app_bild_url', $wpcf7_data->posted_data['app_bild_url']); 
-		add_post_meta($pid, 'app_website_1', $wpcf7_data->posted_data['app_website_1']); 
-		add_post_meta($pid, 'app_text_website_1', $wpcf7_data->posted_data['app_text_website_1']); 
-		add_post_meta($pid, 'app_website_2', $wpcf7_data->posted_data['app_website_2']); 
-		add_post_meta($pid, 'app_text_website_2', $wpcf7_data->posted_data['app_text_website_2']); 
-		add_post_meta($pid, 'app_website_3', $wpcf7_data->posted_data['app_website_3']); 
-		add_post_meta($pid, 'app_text_website_3', $wpcf7_data->posted_data['app_text_website_3']); 
-		add_post_meta($pid, 'app_name_einreicherin', $wpcf7_data->posted_data['app_name_einreicherin']); 
-		add_post_meta($pid, 'app_email_einreicherin', $wpcf7_data->posted_data['app_email_einreicherin']); 
-		add_post_meta($pid, 'app_website_einreicherin', $wpcf7_data->posted_data['app_website_einreicherin']); 
-		add_post_meta($pid, 'app_name_organisation', $wpcf7_data->posted_data['app_name_organisation']); 
-		add_post_meta($pid, 'app_website_organisation', $wpcf7_data->posted_data['app_website_organisation']); 
-		add_post_meta($pid, 'app_bemerkung_einreicherin', $wpcf7_data->posted_data['app_bemerkung_einreicherin']); 
+		add_post_meta($pid, 'app_verwendete_datensaetze', $wpcf7_data->posted_data['app_verwendete_datensaetze']);
+		add_post_meta($pid, 'app_bild_url', $wpcf7_data->posted_data['app_bild_url']);
+		add_post_meta($pid, 'app_website_1', $wpcf7_data->posted_data['app_website_1']);
+		add_post_meta($pid, 'app_text_website_1', $wpcf7_data->posted_data['app_text_website_1']);
+		add_post_meta($pid, 'app_website_2', $wpcf7_data->posted_data['app_website_2']);
+		add_post_meta($pid, 'app_text_website_2', $wpcf7_data->posted_data['app_text_website_2']);
+		add_post_meta($pid, 'app_website_3', $wpcf7_data->posted_data['app_website_3']);
+		add_post_meta($pid, 'app_text_website_3', $wpcf7_data->posted_data['app_text_website_3']);
+		add_post_meta($pid, 'app_name_einreicherin', $wpcf7_data->posted_data['app_name_einreicherin']);
+		add_post_meta($pid, 'app_email_einreicherin', $wpcf7_data->posted_data['app_email_einreicherin']);
+		add_post_meta($pid, 'app_website_einreicherin', $wpcf7_data->posted_data['app_website_einreicherin']);
+		add_post_meta($pid, 'app_name_organisation', $wpcf7_data->posted_data['app_name_organisation']);
+		add_post_meta($pid, 'app_website_organisation', $wpcf7_data->posted_data['app_website_organisation']);
+		add_post_meta($pid, 'app_bemerkung_einreicherin', $wpcf7_data->posted_data['app_bemerkung_einreicherin']);
 		add_post_meta($pid, 'app_ckan_user_key', $wpcf7_data->posted_data['app_ckan_user_key']);
 
 		// add submission date
@@ -786,7 +786,7 @@ function wpcf7_create_anwendung(&$wpcf7_data) {
 		// redirect after all worked properly
 		//wp_redirect( get_template_directory_uri() . '/template-formular-eingereicht.php?app_name=' . $wpcf7_data->posted_data['app_name'] . '&wordpress_id=' . $pid );
 
-	} // end of if statement 
+	} // end of if statement
 
 	// post the post
 	do_action('wp_insert_post', 'wp_insert_post');
@@ -794,7 +794,7 @@ function wpcf7_create_anwendung(&$wpcf7_data) {
 
 
 /**
- * Create datentool post from datentool submission formular before sending mail 
+ * Create datentool post from datentool submission formular before sending mail
  */
 
 
@@ -810,7 +810,7 @@ function wpcf7_create_datentool(&$wpcf7_data) {
 		$new_post = array(
 			'post_title'  => $wpcf7_data->posted_data['tool_name'],
 			'post_content'  => $wpcf7_data->posted_data['tool_beschreibung'],
-			'post_status' =>  'pending',          
+			'post_status' =>  'pending',
 			'post_type' =>  'cpt_datentools'
 		);
 
@@ -825,11 +825,11 @@ function wpcf7_create_datentool(&$wpcf7_data) {
 		$list_funktionen = $wpcf7_data->posted_data['tool_funktionen'];
 		wp_set_post_terms( $pid, $list_funktionen, 'tools_funktionen' );
 
-		// save taxonomy betriebssysteme 
+		// save taxonomy betriebssysteme
 		$list_os = $wpcf7_data->posted_data['tool_betriebssysteme'];
 		wp_set_post_terms( $pid, $list_os, 'tools_betriebssysteme' );
 
-		// save taxonomy typ 
+		// save taxonomy typ
 		$list_typ = $wpcf7_data->posted_data['tool_typ'];
 		wp_set_post_terms( $pid, $list_typ, 'tools_typ' );
 
@@ -837,14 +837,14 @@ function wpcf7_create_datentool(&$wpcf7_data) {
 		add_post_meta($pid, 'tool_name', $wpcf7_data->posted_data['tool_name']);
 		add_post_meta($pid, 'tool_beschreibung', $wpcf7_data->posted_data['tool_beschreibung']);
 		add_post_meta($pid, 'tool_bild_url', $wpcf7_data->posted_data['tool_bild_url']);
-		add_post_meta($pid, 'tool_website', $wpcf7_data->posted_data['tool_website']); 
-		add_post_meta($pid, 'tool_text_website', $wpcf7_data->posted_data['tool_text_website']); 
-		add_post_meta($pid, 'tool_name_einreicherin', $wpcf7_data->posted_data['tool_name_einreicherin']); 
-		add_post_meta($pid, 'tool_email_einreicherin', $wpcf7_data->posted_data['tool_email_einreicherin']); 
-		add_post_meta($pid, 'tool_website_einreicherin', $wpcf7_data->posted_data['tool_website_einreicherin']); 
-		add_post_meta($pid, 'tool_name_organisation', $wpcf7_data->posted_data['tool_name_organisation']); 
-		add_post_meta($pid, 'tool_website_organisation', $wpcf7_data->posted_data['tool_website_organisation']); 
-		add_post_meta($pid, 'tool_bemerkung_einreicherin', $wpcf7_data->posted_data['tool_bemerkung_einreicherin']); 
+		add_post_meta($pid, 'tool_website', $wpcf7_data->posted_data['tool_website']);
+		add_post_meta($pid, 'tool_text_website', $wpcf7_data->posted_data['tool_text_website']);
+		add_post_meta($pid, 'tool_name_einreicherin', $wpcf7_data->posted_data['tool_name_einreicherin']);
+		add_post_meta($pid, 'tool_email_einreicherin', $wpcf7_data->posted_data['tool_email_einreicherin']);
+		add_post_meta($pid, 'tool_website_einreicherin', $wpcf7_data->posted_data['tool_website_einreicherin']);
+		add_post_meta($pid, 'tool_name_organisation', $wpcf7_data->posted_data['tool_name_organisation']);
+		add_post_meta($pid, 'tool_website_organisation', $wpcf7_data->posted_data['tool_website_organisation']);
+		add_post_meta($pid, 'tool_bemerkung_einreicherin', $wpcf7_data->posted_data['tool_bemerkung_einreicherin']);
 		add_post_meta($pid, 'tool_ckan_user_key', $wpcf7_data->posted_data['tool_ckan_user_key']);
 
 		// add submission date
@@ -888,7 +888,7 @@ function wpcf7_create_datentool(&$wpcf7_data) {
 		// redirect after all worked properly
 		//wp_redirect( get_template_directory_uri() . '/template-formular-eingereicht.php?tool_name=' . $wpcf7_data->posted_data['tool_name'] . '&wordpress_id=' . $pid );
 
-	} // end of if statement 
+	} // end of if statement
 
 	// post the post
 	do_action('wp_insert_post', 'wp_insert_post');
@@ -901,17 +901,17 @@ function wpcf7_create_datentool(&$wpcf7_data) {
 
 
 //add_action('save_post', 'write_app2ckan');		// einzige hook die funkt !!!
-// add_action('publish_post', 'write_app2ckan');		
-// add_action('publish_anwendungen', 'write_app2ckan');		
-// add_action('new_to_publish_anwendungen', 'write_app2ckan');		
-// add_action('draft_to_publish_anwendungen', 'write_app2ckan');		
+// add_action('publish_post', 'write_app2ckan');
+// add_action('publish_anwendungen', 'write_app2ckan');
+// add_action('new_to_publish_anwendungen', 'write_app2ckan');
+// add_action('draft_to_publish_anwendungen', 'write_app2ckan');
 // add_action('pending_to_publish_anwendungen', 'write_app2ckan');
-// add_action('new_to_publish', 'write_app2ckan');		
-// add_action('draft_to_publish', 'write_app2ckan');		
+// add_action('new_to_publish', 'write_app2ckan');
+// add_action('draft_to_publish', 'write_app2ckan');
 // add_action('pending_to_publish', 'write_app2ckan');
 
 function write_app2ckan() {
-	
+
 	$pid = get_the_ID();
 
 	include 'vars.php';
@@ -923,7 +923,7 @@ function write_app2ckan() {
 	// get permalink
 	$wordpress_url = get_permalink( $pid );
 
-	
+
 	// get themen
 	$themen_list = wp_get_post_terms( $pid, 'themen', array("fields" => "all"));
 	$themen = '';
@@ -957,7 +957,7 @@ function write_app2ckan() {
 		$api_url = 'http://data.opendataportal.at/api/3/action/related_create';
 		$app_description = 'Typ: Anwendung, Wordpress ID: ' . $pid . ', Themen: ' . $themen;
 		$data = '{"title":"' . $app_name . '", "type":"application", "description":"' . $app_description . '", "dataset_id":"' . $ids[0] . '", "url":"' . $wordpress_url . '"}';
-			
+
 		curl_setopt($ch, CURLOPT_URL, $api_url );
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 		$result = curl_exec($ch);
@@ -965,7 +965,7 @@ function write_app2ckan() {
 
 		$json_php = json_decode( $result, true );
 		update_post_meta( $pid, 'app_notiz_intern', $result);
-				
+
 		update_post_meta( $pid, 'app_ckan_api_call_result', $result);
 		update_post_meta( $pid, 'app_ckan_app_id', $json_php['result']['id']);
 		update_post_meta( $pid, 'app_ckan_owner_id', $json_php['result']['owner_id']);
@@ -1037,17 +1037,17 @@ function customize_output($results , $arg, $id, $getdata ){
 	// The Query
 	$apiclass = new uwpqsfprocess();
 	$query = new WP_Query( $arg );
-	ob_start();    
+	ob_start();
 	$result = '';
-	
+
 	// Filter ID´s used in 'Anwendungen'
 	$anwendungen_search_filters = '771';
 	$anwendungen_text_search = '770';
-	
+
 	// Filter ID´s used in 'Datatools'
 	$datatools_search_filters = '773';
 	$datatools_text_search = '772';
-	
+
 	// Filter ID´s used in 'News'
 	$news_search_filters = '769';
 	$news_text_search = '768';
@@ -1063,7 +1063,7 @@ function customize_output($results , $arg, $id, $getdata ){
 				echo "<script type=\"text/javascript\">$(document).ready(function(){ $('.num-posts-area').html(' Anwendungen '); })</script>";
 			}
 		}
-		
+
 		if($id == $datatools_text_search || $id == $datatools_search_filters){
 			if ($query->found_posts == 1) {
 				echo "<script type=\"text/javascript\">$(document).ready(function(){ $('.num-posts-area').html(' Datentool '); })</script>";
@@ -1077,7 +1077,7 @@ function customize_output($results , $arg, $id, $getdata ){
 		}
 
 		echo "<div class=\"sentence-num-posts ajax-call\"><span class=\"num-posts\">" . $query->found_posts . "</span><span class=\"num-posts-area\"></span> gefunden.</div>";
-		
+
 		while ( $query->have_posts() ) {
 			$query->the_post();
 
@@ -1087,29 +1087,29 @@ function customize_output($results , $arg, $id, $getdata ){
           get_template_part('templates/content', 'anwendung-preview');
         echo "</div>";
 			}
-			
+
 			// Custom Filter View for Area 'Datatools'
 			if($id == $datatools_text_search || $id == $datatools_search_filters){
 				echo "<div class=\"datentools-preview row\">";
           get_template_part('templates/content', 'datentool-preview');
         echo "</div>";
 			}
-			
+
 			// Custom Filter View for Area 'News'
 			if($id == $news_text_search || $id == $news_search_filters){
 				echo "<div class=\"preview-news\">";
 				get_template_part('templates/content', 'news');
 				echo "</div>";
 			}
-		}        
+		}
 		echo  $apiclass->ajax_pagination($arg['paged'],$query->max_num_pages, 4, $id, $getdata);
 	} else {
 		echo "<div class=\"alert alert-warning\">Es tut uns leid aber es wurden keine Ergebnisse gefunden.</div>";
 	}
-	
+
 	/* Restore original Post Data */
 	wp_reset_postdata();
-	$results = ob_get_clean();        
+	$results = ob_get_clean();
 	return $results;
 }
 
@@ -1122,7 +1122,7 @@ function new_excerpt_more( $more ) {
 	if( is_page_template('anwendungen') ) {
 		return 'weiterlesen';
 	} else {
-		return '';	
+		return '';
 	}
 }
 add_filter('excerpt_more', 'new_excerpt_more');
@@ -1131,9 +1131,8 @@ add_filter('excerpt_more', 'new_excerpt_more');
 /**
  * Scheduled daily event to update number of datasets in landing page
  */
-
-
 add_action( 'wp', 'prefix_setup_schedule' );
+
 /**
  * On an early action hook, check if the hook is scheduled - if not, schedule it.
  */
@@ -1146,7 +1145,7 @@ function prefix_setup_schedule() {
 add_action( 'prefix_daily_event', 'prefix_do_this_daily' );
 
 function prefix_do_this_daily() {
-	
+
 	$response = file_get_contents( 'http://data.opendataportal.at/api/2/rest/dataset' );
 	$json_php = json_decode( $response, true );
 	$num_datasets = count( $json_php );
@@ -1158,4 +1157,3 @@ function prefix_do_this_daily() {
 	update_post_meta($post->ID, 'lp_anzahl_datensets', $num_datasets);
 
 }
-

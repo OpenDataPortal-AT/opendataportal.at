@@ -7,7 +7,7 @@ Header
 <header>
 	<div class="banner navbar navbar-default navbar-static-top yamm" role="banner">
 		<div class="container">
-				<div class="header-row">  
+				<div class="header-row">
 
 						<div class="navbar-header col-sm-4">
 								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -20,12 +20,13 @@ Header
 								<a href="<?php echo home_url(); ?>/kontakt" alt="Beta"><img class="logo-beta" src="<?php echo get_template_directory_uri() ?>/assets/img/beta.png"></a><br>
 								<span class="tagline"><i>All you can <span class="tagline-data">Data</i></span></span>
 						</div>
-	
+
 						<div class="header-box-right col-sm-6 col-sm-offset-2">
 
 							<div id="open-data-inside">
 								<a href="http://www.opendatainside.com/mybadge/open-data-portal-oesterreich/">
-								<img src="http://www.opendatainside.com/badge/open-data-portal-oesterreich/" width="100" height="100" alt="Open Data Inside" />
+									<img src="<?php echo get_bloginfo('template_directory'); ?>/assets/img/logo-odi-badge.png" width="100" height="100" alt="Open Data Inside" />
+								</a>
 							</div>
 
 							<div class="header-links">
@@ -33,7 +34,7 @@ Header
 								<a class="header-mailinglist" href="https://intern.opendataportal.at/lists/listinfo/discuss" title="Mailingliste OpenDataPortal Österreich">Mailingliste</a>
 								<a class="header-login" href="http://data.opendataportal.at/user/login" title="Registrieren und Login">Registrieren &amp; Login</a>
 							</div>
-							
+
 							<div id="header-search" class="searchbox-row skip-navigation header-searchform" >
 								<div class="sr-only skip-link">
 										<a href="main">Springe zum Inhalt</a>
@@ -41,7 +42,7 @@ Header
 
 								<?php if(!is_front_page()): ?>
 									<?php get_template_part('templates/searchform'); ?>
-								<?php endif; ?>  
+								<?php endif; ?>
 							</div>
 
 						</div>
@@ -53,12 +54,12 @@ Header
 
 		<div class="wrapper-navbar-collapse container-fluid">
 			<div class="container">
-				<nav class="collapse navbar-collapse" role="navigation">    
+				<nav class="collapse navbar-collapse" role="navigation">
 					<?php
 					if (has_nav_menu('primary_navigation')) :
 						wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'nav navbar-nav navbar-left', 'walker' => new Datagov_Nav_Walker));
-					endif; ?>  
-				</nav> 
+					endif; ?>
+				</nav>
 			</div>
 		</div>
 	</div>
@@ -69,7 +70,7 @@ Header
 			<div class="container-fluid">
 				<div class="jumbotron text-center">
 					<div class="container">
-						
+
 						<h2><?php echo get_post_meta($post->ID, 'lp_ueberschrift_inhalt', single); ?></h2>
 						<div class="entry-content">
 							<?php the_content(); ?>
@@ -83,12 +84,12 @@ Header
 		<div class="wrapper-frontpage-search container-fluid">
 			<div class="header banner frontpage-search container">
 				<div class="text-center getstarted">
-					
+
 					<h2>Datensuche</h2>
 					<h4><label for="search-header">Leg los<br>
 					<small>Über <?php echo get_post_meta($post->ID, 'lp_anzahl_datensets', single); ?> Datensätze durchsuchen</small>
 					<br/><i class="fa fa-caret-down"></i></label></h4>
-				
+
 				</div>
 
 				<?php get_template_part('templates/searchform', 'datenkatalog'); ?>
