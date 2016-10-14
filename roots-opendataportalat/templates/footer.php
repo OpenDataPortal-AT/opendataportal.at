@@ -17,9 +17,9 @@ Footer
 
 			<div class="col-md-8 odp-kooperation">
 				<h2>ODP ist eine Kooperation von:</h2>
-				<a class="logo-okfat" href="http://okfn.at/" title="Open Knowledge Österreich"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-ok-at.svg" alt="Open Knowledge Österreich"></a>
-				<a class="logo-cooperation-ogd" href="http://www.data.gv.at/hintergrund-infos/cooperation-ogd-oesterreich/" title="Cooperation OGD Österreich"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-ogd.png" alt="Cooperation OGD Österreich"></a>
 				<a class="logo-wikimedia" href="https://www.wikimedia.at/" title="Wikimedia Österreich"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-wikimedia.png" alt="Wikimedia Österreich"></a>
+				<a class="logo-okfat" href="http://okfn.at/" title="Open Knowledge Österreich"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-ok-at.png" alt="Open Knowledge Österreich" height="49" style="margin-left: 40px;"></a>
+				<a class="logo-cooperation-ogd" href="http://www.data.gv.at/hintergrund-infos/cooperation-ogd-oesterreich/" title="Cooperation OGD Österreich"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-ogd.png" alt="Cooperation OGD Österreich"></a>
 			</div>
 
 		</div>
