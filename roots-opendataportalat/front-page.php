@@ -13,7 +13,7 @@ Template for Landing Page.
 			<?php $myQuery_Highlight = new WP_Query( array( 'post_type' => 'cpt_highlights', 'posts_per_page' => 1, 'orderby' => 'date', 'order' => 'DESC') );
 			while ( $myQuery_Highlight->have_posts() ) : $myQuery_Highlight->the_post(); { ?>
 				<?php get_template_part('templates/content', 'highlight-preview'); ?>
-			<?php } endwhile; // end of the loop. 
+			<?php } endwhile; // end of the loop.
 			wp_reset_postdata(); ?>
 		</div>
 	</div>
@@ -34,6 +34,11 @@ Template for Landing Page.
 			</a>
 			<a href="https://intern.opendataportal.at/lists/listinfo/discuss" title="Mailingliste" class="col-md-4">
 				<button type="button" class="btn btn-primary button-mailingliste"><span class="icon-mailingliste">Mailingliste</span></button>
+			</a>
+		</div>
+		<div id="button-tutorial" class="col-sm-6 col-sm-offset-3">
+			<a href="/tutorial-daten-hochladen/" title="Tutorial: Daten hochladen">
+				<button type="button" class="btn btn-primary button-tutorial col-sm-12"><span>Tutorial: Daten hochladen</span></button>
 			</a>
 		</div>
 	</div>
@@ -113,7 +118,7 @@ Template for Landing Page.
 				<h4>Gesundheit</h4>
 			</div>
 		</a>
-		
+
 		<a href="<?php echo home_url() ?>/themen/kunst-und-kultur" title="Kunst &amp; Kultur">
 			<div class="logo-thema logo-kunst-und-kultur">
 				<h4>Kunst &amp; Kultur</h4>
@@ -171,7 +176,3 @@ Template for Landing Page.
 		<?php } endwhile; // end of the loop. ?>
 	</div>
 </div>
-
-
-
-
