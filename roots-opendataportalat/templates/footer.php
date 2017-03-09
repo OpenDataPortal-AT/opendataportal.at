@@ -54,7 +54,7 @@ Footer
 
 			<div class="footer-kontakt col-md-6 social-nav">
 				<h2>Kontakt <a class="logo-twitter" href="https://twitter.com/odp_AT" title="Twitter odp_AT"></a><a class="logo-facebook" href="https://www.facebook.com/OpenDataPortalAT" title="Facebook odp_AT"></a></h2>
-				<li class="icon-adresse"><span class="text-bold">Adresse: </span>Wikimedia Österreich, Siebensterngasse 25/15, 1070 Wien</li><br>
+				<li class="icon-adresse"><span class="text-bold">Adresse: </span>Wikimedia Österreich, Stolzenthalergasse 7/1, 1080 Wien</li><br>
 				<!--<li class="icon-telefon"><span class="text-bold">Telefon: </span></li><br> -->
 				<li class="icon-email"><span class="text-bold">Email: </span><a class="footer-email" href="mailto:info@opendataportal.at ">info@opendataportal.at</a></li><br>
 			</div>
